@@ -71,8 +71,9 @@ for (iPosition = 0; iPosition < aoSPORTSWOMEN.length; iPosition++) {
     document.write("<br>" + aoSPORTSWOMEN[iPosition].firstName + " " + aoSPORTSWOMEN[iPosition].lastName +
         ", Age: " + iAge);
     iSumOfAge += iAge;
-    fAverageOfAge = iSumOfAge / aoSPORTSWOMEN.length;
 }
+    fAverageOfAge = iSumOfAge / aoSPORTSWOMEN.length;
+
 document.write("<br>Average Age of all player: " + fAverageOfAge);
 
 for (iPosition = 0; iPosition < aoSPORTSWOMEN.length; iPosition++) {

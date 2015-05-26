@@ -1,7 +1,7 @@
 /**
  * Created by Dung on 2015-05-23.
  */
-var dToday = new Date();
+var dTodayDate = new Date();
 var oCar = {
     brand: "Toyota",
     makeYear: 1999,
@@ -16,4 +16,4 @@ document.write("<br> <h1>Brand: </h1>"  + oCar.brand  +
 
 document.write("<br> There is " + oCar.passengersName.length + " passenger.");
 document.write("<br> The name of last Passenger: " + oCar.passengersName[oCar.passengersName.length-1]);
-document.write("<br> Car's Age: " + ( dToday.getFullYear() - oCar.purchasedDate.getFullYear()));
+document.write("<br> Car's Age: " + ( dTodayDate.getFullYear() - oCar.makeYear));
