@@ -12,12 +12,14 @@ var iNumber;
 var iSumCol = 0, iSumRow = 0;
 var iValMax, iValMin;
 
-// Partie 1: Afficher la table de multiplication de 7
-// Calcul.
+/**
+* Partie 1: Afficher la table de multiplication de 7
+* Calcul.
+ */
 for ( iCounter = 0 ; iCounter <=  10; iCounter++){
     aiResult1 [iCounter] = iNumber7 * iCounter;
 }
-// Partie 1: Afficher la table de multiplication de 7
+
 // Affichage
 document.write("<table border ='1' width='120'>");
 for (iCounter = 0; iCounter <= 10; iCounter++) {
@@ -29,14 +31,18 @@ for (iCounter = 0; iCounter <= 10; iCounter++) {
 }
    document.write("</table><br>");
 
+/**
+ * Partie 2: Demander un nombre entier positif, et afficher sa table de multiplication de 0 à 10
+ */
+ //Calcul.
 
-// Partie 2: Demander un nombre entier positif, et afficher sa table de multiplication de 0 à 10
-// Calcul.
 iNumber = parseInt(prompt("Please enter a number: "));
 for ( iCounter = 0 ; iCounter <=  10; iCounter++){
     aiResult2 [iCounter] = iNumber * iCounter;
 }
+d
 document.write("<table border ='1'width='120'>");
+
 // Partie 2: Demander un nombre entier positif, et afficher sa table de multiplication de 0 à 10
 // Affichage.
 for (iCounter = 0; iCounter <= 10; iCounter++) {
@@ -54,8 +60,8 @@ for (iCounterRow = 0; iCounterRow <= 10; iCounterRow++ ) {
     aiResult3[iCounterRow] = [];
     for (iCounterCol = 0; iCounterCol <= 10; iCounterCol++) {
         aiResult3 [iCounterRow][iCounterCol] =  iCounterRow * iCounterCol;
-        document.write("<br> Row value :" + iCounterRow + " x Col value " + iCounterCol + " = " +
-        aiResult3[iCounterRow][iCounterCol]);
+        //document.write("<br> Row value :" + iCounterRow + " x Col value " + iCounterCol + " = " +
+        //aiResult3[iCounterRow][iCounterCol]);
 
     }
 }
@@ -103,8 +109,11 @@ for (iCounterRow = iValMin; iCounterRow <= iValMax; iCounterRow++) {
         //document.write("<br> Row value :" + iCounterRow + " x Col value " + iCounterCol + " = " +
         //aiResult4[iCounterRow][iCounterCol]);
     }
-    aiResult4 [iCounterRow][iCounterCol] = iSumRow;
+    document.write("<td>" + iSumRow + "<td>");
 }
+
+// Bonus 1: Demander à l'utilisateur les intervalles à afficher pour la table de multiplication. Affichage des valeurs
+
 var iAddRow = aiResult4.length ;
 aiResult4 [iAddRow] = [];
 for (iCounterCol = iValMin; iCounterCol <= iValMax; iCounterCol++ ){
@@ -113,14 +122,14 @@ for (iCounterCol = iValMin; iCounterCol <= iValMax; iCounterCol++ ){
         iSumCol += aiResult4 [iCounterRow][iCounterCol];
 
     }
-    aiResult4 [iCounterRow ][iCounterCol] = iSumCol;
+    document.write("<td>" + iSumCol + "</td>");
 }
 
-// Bonus 1: Demander à l'utilisateur les intervalles à afficher pour la table de multiplication. Affichage des valeurs
 
 document.write("<table border='1 '>" +
                 "<tr>" +
                     "<th> </th> ");
+
 for (iCounter = 0; iCounter <= 10; iCounter++) {
     document.write("<th>" + iCounter + "</th>");
 }
