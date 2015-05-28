@@ -9,6 +9,7 @@ var aiResult4 = [];
 var iCounter, iCounterCol, iCounterRow;
 var iNumber7 = 7;
 var iNumber;
+var iSumCol = 0, iSumRow = 0;
 var iValMax, iValMin;
 
 // Partie 1: Afficher la table de multiplication de 7
@@ -16,9 +17,6 @@ var iValMax, iValMin;
 for ( iCounter = 0 ; iCounter <=  10; iCounter++){
     aiResult1 [iCounter] = iNumber7 * iCounter;
 }
-
-
-
 // Partie 1: Afficher la table de multiplication de 7
 // Affichage
 document.write("<table border ='1' width='120'>");
@@ -62,7 +60,7 @@ for (iCounterRow = 0; iCounterRow <= 10; iCounterRow++ ) {
     }
 }
 // Affichage.
-document.write("<table border ='1'width='120'>" +
+document.write("<table border ='1' width='120'>" +
                 "<tr>" +
                     "<th>   </th>" +
                     "<th> 0 </th>" +
@@ -97,34 +95,41 @@ iValMax = parseInt(prompt("Please enter max value: "));
 
 for (iCounterRow = iValMin; iCounterRow <= iValMax; iCounterRow++) {
     aiResult4 [iCounterRow] = [];
+    iSumRow = 0;
     for (iCounterCol = 0; iCounterCol <= 10; iCounterCol++) {
         aiResult4 [iCounterRow][iCounterCol] = iCounterRow * iCounterCol;
+        iSumRow += aiResult4 [iCounterRow][iCounterCol];
+
         //document.write("<br> Row value :" + iCounterRow + " x Col value " + iCounterCol + " = " +
         //aiResult4[iCounterRow][iCounterCol]);
     }
+    aiResult4 [iCounterRow][iCounterCol] = iSumRow;
+}
+var iAddRow = aiResult4.length ;
+aiResult4 [iAddRow] = [];
+for (iCounterCol = iValMin; iCounterCol <= iValMax; iCounterCol++ ){
+    iSumCol = 0;
+    for (iCounterRow = 1; iCounterRow <= 10; iCounterRow++) {
+        iSumCol += aiResult4 [iCounterRow][iCounterCol];
+
+    }
+    aiResult4 [iCounterRow ][iCounterCol] = iSumCol;
 }
 
 // Bonus 1: Demander à l'utilisateur les intervalles à afficher pour la table de multiplication. Affichage des valeurs
 
 document.write("<table border='1 '>" +
                 "<tr>" +
-                    "<th> </th> " +
-                    "<th> 0 </th>" +
-                    "<th> 1 </th>" +
-                    "<th> 2 </th>" +
-                    "<th> 3 </th>" +
-                    "<th> 4 </th>" +
-                    "<th> 5 </th>" +
-                    "<th> 6 </th>" +
-                    "<th> 7 </th>" +
-                    "<th> 8 </th>" +
-                    "<th> 9 </th>" +
-                    "<th> 10 </th>" +
-                "</tr>"
-);
-for (iCounterRow = iValMin; iCounterRow <= iValMax; iCounterRow++){
+                    "<th> </th> ");
+for (iCounter = 0; iCounter <= 10; iCounter++) {
+    document.write("<th>" + iCounter + "</th>");
+}
+document.write("<th> Sum </th>" +
+              "</tr>");
+
+for (iCounterRow = iValMin; iCounterRow <= iValMax ; iCounterRow++){
     document.write("<tr> <td><strong>" + iCounterRow  +  "</strong>  </td>");
-    for (iCounterCol = 0; iCounterCol <= 10; iCounterCol++) {
+    for (iCounterCol = 0; iCounterCol <= 11; iCounterCol++) {
         document.write (
                             "<td>" + aiResult4 [iCounterRow][iCounterCol] + "</td>");
 
