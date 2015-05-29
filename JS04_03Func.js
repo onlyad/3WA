@@ -25,7 +25,7 @@ function getNthRand(iNumberOfTime) {
         }
         mNumber = aiRandNumber;
     }
-    return mNumber;
+    return mNumber; // VIP Only 1 return per function;
 }
 function writeHtml (mNumber) {
     document.write("<ul>");
@@ -42,3 +42,7 @@ function writeHtml (mNumber) {
 /**
 //Bonus 3: Ecrire une autre fonction (toujours pour les aléatoires) sans utiliser la fonction Math.random()
 */
+function getRand (){
+    var dTodayDay = new Date();
+    return dTodayDay.getMilliseconds() / 3.14;
+}

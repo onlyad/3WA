@@ -59,7 +59,15 @@ if (1 == iNumber) {
 }
 
 
-
-
-
+/**
+//Bonus 3: Ecrire une autre fonction (toujours pour les aléatoires) sans utiliser la fonction Math.random()
+*/
+writeHtml(getRand());
+writeHtml(getRand());
+writeHtml(getRand());
+writeHtml(getRand());
+writeHtml(getRand());
+writeHtml(getRand());
+writeHtml(getRand());
+writeHtml(getRand());
 
