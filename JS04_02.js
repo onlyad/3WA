@@ -16,5 +16,5 @@
 //les 4 à 10, balises <p>
 //au delà, balises<li>
 
-displayPhrase("Hello", 2);
+writePhraseNthTime("Hello", 2);
 defTagsPosition("h1", 1, 3);
