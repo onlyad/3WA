@@ -8,35 +8,35 @@
  * écrire une nouvelle fonction qui vous permet en plus de personnaliser le phrase à répéter.
  *
  */
-function writeSentenceNthTime(sSentence, iNthTime){
-    for (iRepeat = 0; iRepeat < iNthTime; iRepeat++){
+function writeSentenceNthTime(sSentence, iNthTime) {
+    for (iRepeat = 0; iRepeat < iNthTime; iRepeat++) {
         document.write("<br>" + sSentence);
     }
 }
 
 /**
-BONUS
-* Ajouter les conditions suivantes :
-*    la première phrase sera entourée des balises <h1>
-* les 2 et 3ème, des balises <h2>
-* les 4 à 10, balises <p>
-* au delà, balises<li>
-*/
-function writeSentenceNthWithDifferentTags (sSentence, iNthTime) {
-    document.write("<br> Write sentences which repeat "+ iNthTime + " times with different Tags");
+ BONUS
+ * Ajouter les conditions suivantes :
+ *    la première phrase sera entourée des balises <h1>
+ * les 2 et 3ème, des balises <h2>
+ * les 4 à 10, balises <p>
+ * au delà, balises<li>
+ */
+function writeSentenceNthWithDifferentTags(sSentence, iNthTime) {
+    document.write("<br> Write sentences which repeat " + iNthTime + " times with different Tags");
     if (iNthTime > 0) {
-        document.write("<h1>" + sSentence + "</h1>" );
+        document.write("<h1>" + sSentence + "</h1>");
         iNthTime--;
     }
     if (iNthTime > 0) {
-        for (iRepeat = 1; iRepeat<= 2 && iNthTime > 0; iRepeat++ ) {
+        for (iRepeat = 1; iRepeat <= 2 && iNthTime > 0; iRepeat++) {
             document.write("<h2>" + sSentence + "</h2>");
             iNthTime--;
         }
 
     }
     if (iNthTime > 0) {
-        for (iRepeat = 1; iRepeat<= (10 - 4) && iNthTime > 0; iRepeat++ ) {
+        for (iRepeat = 1; iRepeat <= (10 - 4) && iNthTime > 0; iRepeat++) {
             document.write("<p>" + sSentence + "</p>");
             iNthTime--;
         }
@@ -44,7 +44,7 @@ function writeSentenceNthWithDifferentTags (sSentence, iNthTime) {
     }
     if (iNthTime > 0) {
         document.write("<ul>");
-        for (iRepeat = 1; iRepeat<= iNthTime && iNthTime > 0; iRepeat++ ) {
+        for (iRepeat = 1; iRepeat <= iNthTime && iNthTime > 0; iRepeat++) {
             document.write("<li>" + sSentence + "</li>");
             iNthTime--
         }
@@ -93,7 +93,7 @@ function writeSentenceNthWithDifferentTags (sSentence, iNthTime) {
 //}
 //
 
-function defineTagsPosition (sTags, iPosStart, iPosEnd, sSentence, iNthTime ) {
+function defineTagsPosition(sTags, iPosStart, iPosEnd, sSentence, iNthTime) {
     var asTags = {h1Start: 1, h1End: 1, h2Start: 2, h2End: 3, pStart: 4, pEnd: 10, liStart: 11};
 
     switch (sTags) {
@@ -105,16 +105,58 @@ function defineTagsPosition (sTags, iPosStart, iPosEnd, sSentence, iNthTime ) {
                     document.write("<h1>" + sSentence + "</h1>");
                     iNthTime--;
                 }
+            }
+            if (iNthTime > 0) {
+                for (iRepeat = 1; iRepeat <= 2 && iNthTime > 0; iRepeat++) {
+                    document.write("<h2>" + sSentence + "</h2>");
+                    iNthTime--;
+                }
 
             }
-        case 'h2':
+            if (iNthTime > 0) {
+                for (iRepeat = 1; iRepeat <= (10 - 4) && iNthTime > 0; iRepeat++) {
+                    document.write("<p>" + sSentence + "</p>");
+                    iNthTime--;
+                }
+
+            }
+            if (iNthTime > 0) {
+                document.write("<ul>");
+                for (iRepeat = 1; iRepeat <= iNthTime && iNthTime > 0; iRepeat++) {
+                    document.write("<li>" + sSentence + "</li>");
+                    iNthTime--;
+                }
+                document.write("</ul>");
+            }
+            break;
+        case  "h2":
             asTags.h2Start = iPosStart;
-            asTags.h2End   = iPosEnd;
+            asTags.h2End = iPosEnd;
+            if (iNthTime > 0) {
+                document.write("<h1>" + sSentence + "</h1>");
+                iNthTime--;
+            }
             if (iNthTime > 0) {
                 for (iRepeat = iPosStart; iRepeat <= iPosEnd && iNthTime > 0; iRepeat++) {
                     document.write("<h2>" + sSentence + "</h2>");
                     iNthTime--;
                 }
+
+            }
+            if (iNthTime > 0) {
+                for (iRepeat = 1; iRepeat <= (10 - 4) && iNthTime > 0; iRepeat++) {
+                    document.write("<p>" + sSentence + "</p>");
+                    iNthTime--;
+                }
+
+            }
+            if (iNthTime > 0) {
+                document.write("<ul>");
+                for (iRepeat = 1; iRepeat <= iNthTime && iNthTime > 0; iRepeat++) {
+                    document.write("<li>" + sSentence + "</li>");
+                    iNthTime--;
+                }
+                document.write("</ul>");
 
             }
 
