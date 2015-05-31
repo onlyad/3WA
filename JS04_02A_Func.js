@@ -43,12 +43,13 @@ function writeSentenceNthWithDifferentTags(sSentence, iNthTime) {
 
     }
     if (iNthTime > 0) {
-        document.write("<ul>");
-        for (iRepeat = 1; iRepeat <= iNthTime && iNthTime > 0; iRepeat++) {
+        var iRepeatMax = iNthTime;
+        document.write("<ol>");
+        for (iRepeat = 1; iRepeat <= iRepeatMax && iNthTime > 0; iRepeat++) {
             document.write("<li>" + sSentence + "</li>");
             iNthTime--
         }
-        document.write("</ul>");
+        document.write("</ol>");
 
     }
 }
