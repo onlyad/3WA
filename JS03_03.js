@@ -10,10 +10,11 @@ do {
 
 } while (isNaN(fNumber) || !fNumber);
 
-document.write("<br> Nombre tronque : " + parseInt(fNumber));
-document.write("<br> Nombre tronque : " + Math.floor(fNumber));
-document.write("<br> Nombre arrondis au dessus : " + Math.ceil(fNumber));
-document.write("<br> Nombre arrondis : " + Math.round(fNumber));
+document.write("<br> Nombre Entree est: " + fNumber);
+document.write("<br> Nombre tronque (parseInt): " + parseInt(fNumber));
+document.write("<br> Nombre tronque (Math.floor): " + Math.floor(fNumber));
+document.write("<br> Nombre arrondis au dessus (Math.ceil): " + Math.ceil(fNumber));
+document.write("<br> Nombre arrondis (Math.round): " + Math.round(fNumber));
 
 // Bonus
 iRoundOff = parseInt(prompt("How many decimal do you want?"));

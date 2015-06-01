@@ -2,31 +2,35 @@
  * Created by Dung on 2015-05-27.
  */
 
-var aiResult1 = [];
-var aiResult2 = [];
-var aiResult3 = [];
+const iMAX_MULTIPLICATION_NUMBER = 10;
+const iNUMBER_2_DISPLAY_MULTIPLICATION = 7;
+
+var aiMultiplicationTableFor7 = [];
+var aiMultiplicationTable2 = [];
+var aiMultiplicationTable3 = [];
 var aiMultiplicationTable4 = [];
 var iCounter, iCountCol, iCountRow;
-var iNumber7 = 7;
+
 var iNumber;
 var iSumCol = 0, iSumRow = 0;
-var iValMax, iValMin;
+var iRowValMax, iRowValMin;
 
 /**
 * Partie 1: Afficher la table de multiplication de 7
 * Calcul.
  */
-for ( iCounter = 0 ; iCounter <=  10; iCounter++){
-    aiResult1 [iCounter] = iNumber7 * iCounter;
+for ( iCounter = 0 ; iCounter <=  iMAX_MULTIPLICATION_NUMBER; iCounter++){
+    aiMultiplicationTableFor7 [iCounter] = iNUMBER_2_DISPLAY_MULTIPLICATION * iCounter;
 }
 
 // Affichage
+document.write("<h2> Multiplication table for Number 7 </h2>");
 document.write("<table border ='1' width='120'>");
 for (iCounter = 0; iCounter <= 10; iCounter++) {
     document.write(
                     "<tr>" +
-                        "<td>" + iCounter + " x " + iNumber7 + " = </td>" +
-                        "<td>" + aiResult1[iCounter] + "</td>" +
+                        "<td>" + iCounter + " x " + iNUMBER_2_DISPLAY_MULTIPLICATION + " = </td>" +
+                        "<td>" + aiMultiplicationTableFor7[iCounter] + "</td>" +
                     "</tr>");
 }
    document.write("</table><br>");
@@ -36,20 +40,24 @@ for (iCounter = 0; iCounter <= 10; iCounter++) {
  */
  //Calcul.
 
-iNumber = parseInt(prompt("Please enter a number: "));
-for ( iCounter = 0 ; iCounter <=  10; iCounter++){
-    aiResult2 [iCounter] = iNumber * iCounter;
+do {
+    iNumber = (prompt("Please enter a number > 0 "));
+} while (isNaN(iNumber) || parseInt(iNumber) < 0 );
+iNumber = parseInt(iNumber);
+
+    for ( iCounter = 0 ; iCounter <=  iMAX_MULTIPLICATION_NUMBER; iCounter++){
+    aiMultiplicationTable2 [iCounter] = iNumber * iCounter;
 }
 
 document.write("<table border ='1' width='120'>");
 
 // Partie 2: Demander un nombre entier positif, et afficher sa table de multiplication de 0 à 10
 // Affichage.
-for (iCounter = 0; iCounter <= 10; iCounter++) {
+for (iCounter = 0; iCounter <= iMAX_MULTIPLICATION_NUMBER; iCounter++) {
     document.write(
     "<tr>" +
         "<td >" + iCounter + " x " + iNumber + " = </td>" +
-        "<td>" + aiResult2[iCounter] + "</td>" +
+        "<td>" + aiMultiplicationTable2[iCounter] + "</td>" +
     "</tr>");
 }
 document.write("</table>");
@@ -57,38 +65,36 @@ document.write("</table>");
 // Partie 3: Affichage de la table complète de multiplications (0 à 10)
 //Calcul
 */
- for (iCountRow = 0; iCountRow <= 10; iCountRow++ ) {
-    aiResult3[iCountRow] = [];
-    for (iCountCol = 0; iCountCol <= 10; iCountCol++) {
-        aiResult3 [iCountRow][iCountCol] =  iCountRow * iCountCol;
+ for (iCountRow = 0; iCountRow <= iMAX_MULTIPLICATION_NUMBER; iCountRow++ ) {
+    aiMultiplicationTable3[iCountRow] = [];
+    for (iCountCol = 0; iCountCol <= iMAX_MULTIPLICATION_NUMBER; iCountCol++) {
+        aiMultiplicationTable3 [iCountRow][iCountCol] =  iCountRow * iCountCol;
         //document.write("<br> Row value :" + iCountRow + " x Col value " + iCountCol + " = " +
-        //aiResult3[iCountRow][iCountCol]);
+        //aiMultiplicationTable3[iCountRow][iCountCol]);
 
     }
 }
 // Affichage.
-document.write("<table border ='1' width='120'>" +
-                "<tr>" +
-                    "<th>   </th>" +
-                    "<th> 0 </th>" +
-                    "<th> 1 </th>" +
-                    "<th> 2 </th>" +
-                    "<th> 3 </th>" +
-                    "<th> 4 </th>" +
-                    "<th> 5 </th>" +
-                    "<th> 6 </th>" +
-                    "<th> 7 </th>" +
-                    "<th> 8 </th>" +
-                    "<th> 9 </th>" +
-                    "<th> 10 </th>"
-);
+document.write("<h2> Complete Multiplication table from 0 to 10.</h2>");
+document.write("<table border ='1' width='120'>");
+document.write("<thead>");
+document.write("   <tr>");
+document.write("       <th>&nbsp;</th>");
+// Affichage des intervalles de 0 jusqu'au taille des colonnes.
+for (iCountCol = 0; iCountCol <= iMAX_MULTIPLICATION_NUMBER; iCountCol++) {
+    document.write( "<th>" + iCountCol + "</th>");
 
-for (iCountRow = 0; iCountRow <= 10; iCountRow++ ) {
+}
+document.write("   </tr>");
+document.write("</thead>");
+
+// Affichage de la ligne
+for (iCountRow = 0; iCountRow <= iMAX_MULTIPLICATION_NUMBER; iCountRow++ ) {
     document.write("<tr>" +
-                    "<td><strong>" + iCountRow + "</strong></td>");
+                    "<td>" + iCountRow + "</td>");
     for (iCountCol = 0; iCountCol <= 10; iCountCol++) {
         document.write(
-                            "<td>" + aiResult3[iCountRow][iCountCol] +  "</td>");
+                            "<td>" + aiMultiplicationTable3[iCountRow][iCountCol] +  "</td>");
 
     }
     document.write("</tr>");
@@ -97,10 +103,17 @@ document.write("</table>");
 /**
 * Bonus 1: Demander à l'utilisateur les intervalles à afficher pour la table de multiplication.
 */
-iValMin = parseInt(prompt("Please enter min value: "));
-iValMax = parseInt(prompt("Please enter max value: "));
+do {
+    iRowValMin = (prompt("Please enter min value for the row > 0 "));
+} while (isNaN(iRowValMin) || parseInt(iRowValMin) < 0);
+iRowValMin = parseInt(iRowValMin);
 
-for (iCountRow = iValMin; iCountRow <= iValMax; iCountRow++) {
+do {
+    iRowValMax = parseInt(prompt("Please enter max value for the row > 0 "));
+} while (isNaN(iRowValMax) || parseInt(iRowValMax) < 0);
+iRowValMax = parseInt(iRowValMax);
+
+for (iCountRow = iRowValMin; iCountRow <= iRowValMax; iCountRow++) {
     aiMultiplicationTable4 [iCountRow] = [];
     for (iCountCol = 0; iCountCol <= 10; iCountCol++) {
         aiMultiplicationTable4 [iCountRow][iCountCol] = iCountRow * iCountCol;
@@ -114,9 +127,9 @@ for (iCountRow = iValMin; iCountRow <= iValMax; iCountRow++) {
 
 document.write("<h1> Multiplication Table according to user Min and Max.</h1>");
 document.write("<table border='1'>");
+document.write("<thead>");
 document.write("   <tr>");
-document.write("   <th>");
-document.write("   </th>");
+document.write("      <th>&nbsp;</th>");
 for (iCounter = 0; iCounter <= 10; iCounter++){
     document.write("   <th>");
     document.write(        iCounter);
@@ -124,11 +137,12 @@ for (iCounter = 0; iCounter <= 10; iCounter++){
 }
 document.write("       <th> Sum </th>");
 document.write("   </tr>");
-
-for (iCountRow = iValMin; iCountRow <= iValMax; iCountRow++) {
+document.write("</thead>");
+document.write("<tbody>");
+for (iCountRow = iRowValMin; iCountRow <= iRowValMax; iCountRow++) {
     document.write("  <tr>");
     document.write("    <th>");
-    document.write(        iCountRow);
+    document.write(        iCountRow); // Affichage de la ligne
     document.write("    </th>");
     iSumRow = 0;
     for (iCountCol = 0; iCountCol <= 10; iCountCol++){
@@ -142,12 +156,15 @@ for (iCountRow = iValMin; iCountRow <= iValMax; iCountRow++) {
     document.write("     </td>");
     document.write("  </tr>");
 }
+
+document.write("</tbody>");
+document.write("<tfoot>");
 document.write("  <tr>");
 document.write("    <th> Sum</th>");
 
-for (iCountCol = 0; iCountCol <= 10; iCountCol++){
+for (iCountCol = 0; iCountCol <= iMAX_MULTIPLICATION_NUMBER; iCountCol++){
     iSumCol = 0;
-    for (iCountRow = iValMin; iCountRow <= iValMax; iCountRow++) {
+    for (iCountRow = iRowValMin; iCountRow <= iRowValMax; iCountRow++) {
         iSumCol += aiMultiplicationTable4 [iCountRow][iCountCol];
     }
     document.write("  <td>");
@@ -155,8 +172,7 @@ for (iCountCol = 0; iCountCol <= 10; iCountCol++){
     document.write("  </td>");
 }
 document.write("  </tr>");
-
-
+document.write("</tfoot>");
 document.write("</table>");
 
 /**
@@ -165,14 +181,13 @@ document.write("</table>");
  * Bonus 3: Ajouter en fin de votre tableau de multiplication, la somme de chacune des colonnes, et des lignes
  */
 
-
-var iMultiplicationColumnStep;
-var iMultiplicationColumnMin, iMultiplicationColumnMax;
+var iMultiplicationTableColumnStep;
+var iMultiplicationTableColumnMin, iMultiplicationTableColumnMax;
 var iMultiplicationTableRowMin, iMultiplicationTableRowMax;
 
-iMultiplicationColumnMin = parseInt(prompt("Min column value for the table of Multiplication"));
-iMultiplicationColumnMax = parseInt(prompt("Max column value for the table of Multiplication"));
-iMultiplicationColumnStep = parseInt(prompt("Step value for the column of table of Multiplication"));
+iMultiplicationTableColumnMin = parseInt(prompt("Min column value for the table of Multiplication"));
+iMultiplicationTableColumnMax = parseInt(prompt("Max column value for the table of Multiplication"));
+iMultiplicationTableColumnStep = parseInt(prompt("Step value for the column of table of Multiplication"));
 
 iMultiplicationTableRowMin = parseInt(prompt("Min Number for the table row of Multiplication"));
 iMultiplicationTableRowMax = parseInt(prompt("Max Number for the table row of Multiplication"));
@@ -181,7 +196,7 @@ iMultiplicationTableRowMax = parseInt(prompt("Max Number for the table row of Mu
 
 for (iCountRow = iMultiplicationTableRowMin; iCountRow <= iMultiplicationTableRowMax; iCountRow++) {
     aiMultiplicationTable4 [iCountRow] = [];
-    for (iCountCol = iMultiplicationColumnMin; iCountCol <= iMultiplicationColumnMax; iCountCol+= iMultiplicationColumnStep) {
+    for (iCountCol = iMultiplicationTableColumnMin; iCountCol <= iMultiplicationTableColumnMax; iCountCol+= iMultiplicationTableColumnStep) {
         aiMultiplicationTable4 [iCountRow][iCountCol] = iCountRow * iCountCol;
 
         //document.write("<br> Row value :" + iCountRow + " x Col value " + iCountCol + " = " +
@@ -194,25 +209,27 @@ for (iCountRow = iMultiplicationTableRowMin; iCountRow <= iMultiplicationTableRo
 document.write("<h1> Multiplication Table according to user Column Min and Max and Multiplication Step and Row" +
 ".</h1>");
 document.write("<table border='1'>");
+document.write("<thead>");
 document.write("   <tr>");
-document.write("   <th>");
-document.write("   </th>");
+document.write("   <th>&nbsp;</th>");
 
-for (iCountCol = iMultiplicationColumnMin; iCountCol <= iMultiplicationColumnMax; iCountCol += iMultiplicationColumnStep){
+for (iCountCol = iMultiplicationTableColumnMin; iCountCol <= iMultiplicationTableColumnMax; iCountCol += iMultiplicationTableColumnStep){
     document.write("   <th>");
     document.write(        iCountCol);
     document.write("   </th>");
 }
 document.write("       <th> Sum </th>");
 document.write("   </tr>");
+document.write("</thead>");
 
+document.write("<tbody>");
 for (iCountRow = iMultiplicationTableRowMin; iCountRow <= iMultiplicationTableRowMax; iCountRow++) {
     document.write("  <tr>");
     document.write("    <th>");
     document.write(        iCountRow);
     document.write("    </th>");
     iSumRow = 0;
-    for (iCountCol = iMultiplicationColumnMin; iCountCol <= iMultiplicationColumnMax; iCountCol += iMultiplicationColumnStep){
+    for (iCountCol = iMultiplicationTableColumnMin; iCountCol <= iMultiplicationTableColumnMax; iCountCol += iMultiplicationTableColumnStep){
         document.write("  <td>");
         document.write(aiMultiplicationTable4 [iCountRow][iCountCol]);
         document.write("  </td>");
@@ -223,10 +240,12 @@ for (iCountRow = iMultiplicationTableRowMin; iCountRow <= iMultiplicationTableRo
     document.write("     </th>");
     document.write("  </tr>");
 }
+document.write(" </tbody>");
+document.write(" <tfoot>");
 document.write("  <tr>");
-document.write("    <th> Sum</th>");
+document.write("    <th> SumRow</th>");
 
-for (iCountCol = iMultiplicationColumnMin; iCountCol <= iMultiplicationColumnMax; iCountCol += iMultiplicationColumnStep){
+for (iCountCol = iMultiplicationTableColumnMin; iCountCol <= iMultiplicationTableColumnMax; iCountCol += iMultiplicationTableColumnStep){
     iSumCol = 0;
     for (iCountRow = iMultiplicationTableRowMin; iCountRow <= iMultiplicationTableRowMax; iCountRow ++) {
         iSumCol += aiMultiplicationTable4 [iCountRow][iCountCol];
@@ -237,6 +256,6 @@ for (iCountCol = iMultiplicationColumnMin; iCountCol <= iMultiplicationColumnMax
 }
 document.write("  </tr>");
 
-
+document.write(" </tfoot>");
 document.write("</table>");
 
