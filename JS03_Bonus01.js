@@ -32,43 +32,49 @@ const aoSPORTSWOMEN = [
 var dToday = new Date();
 var iAgeBestPlayer;
 var iCountCountry = 0;
-var iMostFrequentCountry = 0;
-var iPosition;
+
+var iCurrentPlayerPosition;
 var iPositionBestPlayer;
-var iPositionShortestFirstName = 0;
+
 var iSumOfAge = 0;
-var fAverageOfAge = 0;
+var fAverageOfAge;
 var sMostFrequentCountryName;
 var sNameOfBestPlayer;
 
 
 var iAgeFirstPlayer = dToday.getYear() - aoSPORTSWOMEN[0].dateOfBirth.getYear();
 
+// Age & name of the 1st player on the list
 document.write("<br> First Player: " + aoSPORTSWOMEN[0].firstName + " " + aoSPORTSWOMEN[0].lastName + ", Age: " + iAgeFirstPlayer);
 
-for (iPosition = 0; iPosition < aoSPORTSWOMEN.length; iPosition++) {
-    if (aoSPORTSWOMEN[iPosition].rank == "1"){
-        iPositionBestPlayer = iPosition;
-        sNameOfBestPlayer = aoSPORTSWOMEN[iPosition].firstName + " " + aoSPORTSWOMEN[iPosition].lastName + ", Age: " +
-        aoSPORTSWOMEN[iPosition].dateOfBirth;
-        iAgeBestPlayer = dToday.getYear() - aoSPORTSWOMEN[iPosition].dateOfBirth.getYear();
+// Age & Name of the best player on the list
+for (iCurrentPlayerPosition = 0; iCurrentPlayerPosition < aoSPORTSWOMEN.length; iCurrentPlayerPosition++) {
+    if (aoSPORTSWOMEN[iCurrentPlayerPosition].rank == "1"){
+        iPositionBestPlayer = iCurrentPlayerPosition;
+        sNameOfBestPlayer = aoSPORTSWOMEN[iCurrentPlayerPosition].firstName + " " + aoSPORTSWOMEN[iCurrentPlayerPosition].lastName + ", Age: " +
+        aoSPORTSWOMEN[iCurrentPlayerPosition].dateOfBirth;
+        iAgeBestPlayer = dToday.getYear() - aoSPORTSWOMEN[iCurrentPlayerPosition].dateOfBirth.getYear();
     }
 }
 document.write("<br> Best Player: " + aoSPORTSWOMEN[iPositionBestPlayer].firstName + " " +
 aoSPORTSWOMEN[iPositionBestPlayer].lastName + ", Age: " + iAgeBestPlayer);
 
-for (iPosition = 1; iPosition < aoSPORTSWOMEN.length; iPosition++) {
-    if (aoSPORTSWOMEN[iPositionShortestFirstName].firstName.length > aoSPORTSWOMEN[iPosition].firstName.length){
-        iPositionShortestFirstName = iPosition;
+// We compare the 1st Firstname w index 0 to the 2nd Firstname w index 1. And we take the shortest Firsname
+// then we compare this shortest Firstame to the next Firstname. Til the end of loop for .
+var iPositionShortestFirstName = 0;
+for (iCurrentPlayerPosition = 1; iCurrentPlayerPosition < aoSPORTSWOMEN.length; iCurrentPlayerPosition++) {
+    if (aoSPORTSWOMEN[iPositionShortestFirstName].firstName.length > aoSPORTSWOMEN[iCurrentPlayerPosition].firstName.length){
+        iPositionShortestFirstName = iCurrentPlayerPosition;
     }
 }
 document.write("<br>" + aoSPORTSWOMEN[iPositionShortestFirstName].firstName + " " +
      aoSPORTSWOMEN[iPositionShortestFirstName].lastName + ", Shortest FirstName " +
      aoSPORTSWOMEN[iPositionShortestFirstName].firstName);
 
-for (iPosition = 0; iPosition < aoSPORTSWOMEN.length; iPosition++) {
-    var iAge =   dToday.getFullYear() - aoSPORTSWOMEN[iPosition].dateOfBirth.getFullYear();
-    document.write("<br>" + aoSPORTSWOMEN[iPosition].firstName + " " + aoSPORTSWOMEN[iPosition].lastName +
+// We calculate & then display the Age average of all the player.
+for (iCurrentPlayerPosition = 0; iCurrentPlayerPosition < aoSPORTSWOMEN.length; iCurrentPlayerPosition++) {
+    var iAge =   dToday.getFullYear() - aoSPORTSWOMEN[iCurrentPlayerPosition].dateOfBirth.getFullYear();
+    document.write("<br>" + aoSPORTSWOMEN[iCurrentPlayerPosition].firstName + " " + aoSPORTSWOMEN[iCurrentPlayerPosition].lastName +
         ", Age: " + iAge);
     iSumOfAge += iAge;
 }
@@ -76,20 +82,22 @@ for (iPosition = 0; iPosition < aoSPORTSWOMEN.length; iPosition++) {
 
 document.write("<br>Average Age of all player: " + fAverageOfAge);
 
-for (iPosition = 0; iPosition < aoSPORTSWOMEN.length; iPosition++) {
-    //document.write("<br> iPosition: " + iPosition);
-    for (iPosition2 = iPosition + 1 ; iPosition2 < aoSPORTSWOMEN.length; iPosition2++){
-        //document.write("<br> Counter Country b4 compare: " + iCountCountry + "iPosition.BirthPlace:" + iPosition +
-        //aoSPORTSWOMEN[iPosition] + "iPosition2.BirthPlace:" + iPosition2 +
-        //aoSPORTSWOMEN[iPosition2]);
-        if (aoSPORTSWOMEN[iPosition].birthPlace == aoSPORTSWOMEN[iPosition2].birthPlace){
+var iMostFrequentCountry = 0;
+for (iCurrentPlayerPosition = 0; iCurrentPlayerPosition < aoSPORTSWOMEN.length; iCurrentPlayerPosition++) {
+    //document.write("<br> iCurrentPlayerPosition: " + iCurrentPlayerPosition);
+    // We select the 1st country of the 1st player compare with 2nd player's country, then 3rd, then 4th
+    for (iNextPlayerPosition = iCurrentPlayerPosition + 1 ; iNextPlayerPosition < aoSPORTSWOMEN.length; iNextPlayerPosition++){
+        //document.write("<br> Counter Country b4 compare: " + iCountCountry + "iCurrentPlayerPosition.BirthPlace:" + iCurrentPlayerPosition +
+        //aoSPORTSWOMEN[iCurrentPlayerPosition] + "iNextPlayerPosition.BirthPlace:" + iNextPlayerPosition +
+        //aoSPORTSWOMEN[iNextPlayerPosition]);
+        if (aoSPORTSWOMEN[iCurrentPlayerPosition].birthPlace == aoSPORTSWOMEN[iNextPlayerPosition].birthPlace){
             iCountCountry++;
             //document.write("<br> Counter Country: " + iCountCountry);
         }
     }
     if (iCountCountry > iMostFrequentCountry) {
         iMostFrequentCountry = iCountCountry;
-        sMostFrequentCountryName = aoSPORTSWOMEN[iPosition].birthPlace;
+        sMostFrequentCountryName = aoSPORTSWOMEN[iCurrentPlayerPosition].birthPlace;
     }
 }
 document.write("<br> Most Frequent Country: " + sMostFrequentCountryName);
