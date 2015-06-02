@@ -147,3 +147,5 @@ for (iCol = iMultiplicationColumnMin; iCol <= iMultiplicationColumnMax; iCol += 
     }
     document.write("<th>" + iSumCol + "</th>");
 }
+document.write("</tfoot>");
+document.write("</table>");
