@@ -2,19 +2,19 @@
  * Created by jour on 5/29/2015.
  */
 
-/**Partie 1:
+/**
  * fonction permettant de demander un nombre entier compris entre un minimum et un maximum. On doit récupérer
  * ce nombre en le demandant à l'utilisateur. Votre fonction doit renvoyer le nombre choisi, et doit continuer
  * son exécution tant que l'utilisateur ne saisit pas ce qu'il faut
- * @param iMin
- * @param iMax
- * @returns {*}
+ * @param {int} iMin minimum value
+ * @param {int} iMax maximum value
+ * @returns {int} a number that user entered
  */
 
 function getFromUser1IntegerNumber (iMin, iMax) {
     var iNumber ;
     do {
-       iNumber = parseInt(prompt("Please input an integer number:"));
+       iNumber = parseInt(prompt("Please input an integer number between " + iMin + " and " + iMax));
    } while (isNaN(iNumber) || iMin > iNumber || iMax < iNumber);
     return iNumber;
 }
