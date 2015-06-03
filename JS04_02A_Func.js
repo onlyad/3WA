@@ -22,6 +22,8 @@ function writeSentenceNthTime(sSentence, iNthTime) {
  * les 4 à 10, balises <p>
  * au delà, balises<li>
  */
+
+
 function writeSentenceNthWithDifferentTags(sSentence, iNthTime) {
     document.write("<br> Write sentences which repeat " + iNthTime + " times with different Tags");
     if (iNthTime > 0) {
