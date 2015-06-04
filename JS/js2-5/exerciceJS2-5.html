@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript - Exemple 5</title>
+    <style>
+        ul {
+            margin: 0 auto;
+            padding: 0;
+            width: 400px;
+            text-align: center;
+        }
+
+        ul > li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul > li:first-child > ul {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 50px 0 20px;
+            background-color: #def;
+            border: 3px solid #88f;
+        }
+
+        ul > li > ul > li {
+            display: inline-block;
+            width: 33%;
+            text-align: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #88f;
+        }
+    </style>
+</head>
+<body>
+<script src="exerciceJS2-5.js"></script>
+</body>
+</html>
