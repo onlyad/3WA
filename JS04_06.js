@@ -37,54 +37,77 @@
 const iMAX_GAME_PERMIT = 10;
 
 var aiWinGames =[];
-var bWantPlay;
+var sMsg = "";
 var iCountAllGames = 0;
 var iCountGuess;
 var iCountWinGame = 0;
-var iUserGuessNumber;
+var iUserGuessNumber = 0;
 var iComputerRandNumber;
+var iRandRangeMin, iRandRangeMax;
 
-
-
-// Repeat the game while User still want to play;
 do {
-// Loop til user has tried 10 times unsuccessfully or user has get the exact Computer random number
-    iComputerRandNumber = getRandIntBetweenMinAndMax(1, 10);
-    iCountGuess = iMAX_GAME_PERMIT;
-    iCountAllGames++;
+    dTodayDate1 = new Date();
+    iCountAllGames++; // new game. We increment 1 so that when display, it will said "Game 1" instead "Game 0"
+
+    do {
+        iRandRangeMin = parseInt(prompt("Please Enter the Min Range for Random Number:"))
+     } while (isNaN(iRandRangeMin));
+    do {
+        iRandRangeMax = parseInt(prompt("Please Enter the Max Range for Random Number:"))
+    } while (isNaN(iRandRangeMax));
+
+    iComputerRandNumber = getRandIntBetweenMinAndMax(iRandRangeMin, iRandRangeMax);
+    iCountGuess = 0;
+
     document.write("<h2> Game Number : " + iCountAllGames + "</h2>");
     do {
+        do {
+            iCountGuess++; // We initialized at 0 and we increment 1 at the beginning to display Game 1 ...10.
+            // Coz if we iCountGuess at the end, there will be one too much.
+            sMsg = "Game " + iCountAllGames + ": Please guess the number the computer has choose. ";
+            iUserGuessNumber = getFromUser1IntegerNumber( iRandRangeMin, iRandRangeMax, sMsg);
+       } while (isNaN(iUserGuessNumber));
 
-        iUserGuessNumber = parseInt(prompt("Game " + iCountAllGames + ": Please guess the number the computer has choose "));
-        iCountGuess--;
+
         if (iComputerRandNumber > iUserGuessNumber) {
-            document.write("<br> Guess No" + (iMAX_GAME_PERMIT - iCountGuess) + ". The number you guess " + iUserGuessNumber + " is lower than the Computer choosen number");
+            document.write("<br> Guess No" + iCountGuess + ". The number you guess " + iUserGuessNumber + " is lower than the Computer choosen number");
         } else if (iComputerRandNumber < iUserGuessNumber) {
-            document.write("<br> Guess No" + (iMAX_GAME_PERMIT - iCountGuess) + ". The number you guess " + iUserGuessNumber + " is higher than the Computer choosen number");
+            document.write("<br> Guess No" +  iCountGuess + ". The number you guess " + iUserGuessNumber + " is higher than the Computer choosen number");
         }
-    } while (iUserGuessNumber != iComputerRandNumber && iCountGuess > 0);
+    } while (iUserGuessNumber != iComputerRandNumber && iCountGuess < 10);
+    // Loop til user has tried 10 times unsuccessfully or user has get the exact Computer random number
 
     if (iUserGuessNumber == iComputerRandNumber) {
         document.write("<br> You have won. The right number is : " + iComputerRandNumber +
-                        ". You get in " + (iMAX_GAME_PERMIT - iCountGuess) + " Guess.");
-        aiWinGames [iCountWinGame] = 10 - iCountGuess;
+                        ". You get in " + iCountGuess + " Guess.");
+        aiWinGames [iCountWinGame] = iCountGuess;
         iCountWinGame++;
         // I put the number of win guess in an array integer aiWinGames. The array start at Index = 1;
 
     } else {
-        document.write("<br> You lost. You did not guess the right number after 10 tries");
+        document.write("<br> You lost. You did not guess the right number after " + iMAX_GAME_PERMIT + " tries");
     }
 
-    bWantPlay = confirm("Do you want to play again?");
-} while (bWantPlay);
+    dTodayDate2 = new Date();
+} while (confirm("Do you want to play again?") && dTodayDate2 - dTodayDate1 <= 300000 );
+// Repeat the game while User still want to play;
+
+/******************************************************************
+ * After the games, display all the statistic related to the game
+ ******************************************************************/
+if (dTodayDate2 - dTodayDate1 > 300000) {
+    document.write("<h3> You have only 5 minutes to play and you take more than 5 min. </h3>" );
+}
+
+
 
 // Display all the win / lost game
-document.write("<h3> You play " + iCountAllGames + " Games. You win " + iCountWinGame + " times. You lost " +
+document.write("<h3> You play " + iCountAllGames   + " Games. You win " + iCountWinGame + " times. You lost " +
          (iCountAllGames - iCountWinGame) + " times." + "</h3>");
 
 // Search in the Array Integer aiWinGames, the lowest number of guess.
 var iLowestNumberOfGuessIndex = 0;
-for (iIndex = 1 ; iIndex <= aiWinGames.length; iIndex++) {
+for (var iIndex = 1 ; iIndex < aiWinGames.length; iIndex++) {
     if (aiWinGames[iIndex] < aiWinGames[iLowestNumberOfGuessIndex] )  {
         iLowestNumberOfGuessIndex = iIndex;
 
