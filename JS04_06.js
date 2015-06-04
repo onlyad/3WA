@@ -46,7 +46,7 @@ var iComputerRandNumber;
 var iRandRangeMin, iRandRangeMax;
 
 do {
-    dTodayDate1 = new Date();
+    dStart = new Date();
     iCountAllGames++; // new game. We increment 1 so that when display, it will said "Game 1" instead "Game 0"
 
     do {
@@ -61,21 +61,18 @@ do {
 
     document.write("<h2> Game Number : " + iCountAllGames + "</h2>");
     do {
-        do {
             iCountGuess++; // We initialized at 0 and we increment 1 at the beginning to display Game 1 ...10.
             // Coz if we iCountGuess at the end, there will be one too much.
             sMsg = "Game " + iCountAllGames + ": Please guess the number the computer has choose. ";
             iUserGuessNumber = getFromUser1IntegerNumber( iRandRangeMin, iRandRangeMax, sMsg);
-       } while (isNaN(iUserGuessNumber));
-
 
         if (iComputerRandNumber > iUserGuessNumber) {
             document.write("<br> Guess No" + iCountGuess + ". The number you guess " + iUserGuessNumber + " is lower than the Computer choosen number");
         } else if (iComputerRandNumber < iUserGuessNumber) {
             document.write("<br> Guess No" +  iCountGuess + ". The number you guess " + iUserGuessNumber + " is higher than the Computer choosen number");
         }
-    } while (iUserGuessNumber != iComputerRandNumber && iCountGuess < 10);
-    // Loop til user has tried 10 times unsuccessfully or user has get the exact Computer random number
+    } while (iUserGuessNumber != iComputerRandNumber && iCountGuess < iMAX_GAME_PERMIT);
+    // Loop til user has tried iMAX_GAME_PERMIT times unsuccessfully or user has get the exact Computer random number
 
     if (iUserGuessNumber == iComputerRandNumber) {
         document.write("<br> You have won. The right number is : " + iComputerRandNumber +
@@ -88,14 +85,14 @@ do {
         document.write("<br> You lost. You did not guess the right number after " + iMAX_GAME_PERMIT + " tries");
     }
 
-    dTodayDate2 = new Date();
-} while (confirm("Do you want to play again?") && dTodayDate2 - dTodayDate1 <= 300000 );
+    dEnd = new Date();
+} while (confirm("Do you want to play again?") && dEnd - dStart <= 300000 );
 // Repeat the game while User still want to play;
 
 /******************************************************************
  * After the games, display all the statistic related to the game
  ******************************************************************/
-if (dTodayDate2 - dTodayDate1 > 300000) {
+if (dEnd - dStart > 300000) {
     document.write("<h3> You have only 5 minutes to play and you take more than 5 min. </h3>" );
 }
 
