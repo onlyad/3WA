@@ -54,11 +54,12 @@ do {
         iCountTries++;
         iUserGuessNumber = getFromUser1IntegerNumber(iRangeMin, iRangeMax, "");
         if (iUserGuessNumber > iComputerRandNumber) {
-            sMsg = ". Your guess is " + iUserGuessNumber + " which is higher than the Rand Number";
+            document.write("<br> Game #" + iCountAllGames + " . Try #" + iCountTries + ". Your guess is " +
+                iUserGuessNumber + " which is higher than the Rand Number");
         } else if (iUserGuessNumber < iComputerRandNumber) {
-            sMsg = ". Your guess is " + iUserGuessNumber + " which is lower than the Rand Number";
+            document.write("<br> Game #" + iCountAllGames + " . Try #" + iCountTries + ". Your guess is " +
+                iUserGuessNumber + " which is lower than the Rand Number");
         }
-        document.write("<br> Game #" + iCountAllGames + " . Try #" + iCountTries + sMsg);
     } while ((iUserGuessNumber != iComputerRandNumber) && iCountTries < iMAX_TRIES_ALLOWED);
 
     if (iUserGuessNumber == iComputerRandNumber){
@@ -66,7 +67,7 @@ do {
         iCountWinGames++;
         iSumTries += iCountTries;
 
-        if (CountWinGames = 1) {
+        if (1 == iCountWinGames ) {
             iCountMinTries = iCountTries;
         } else if (iCountMinTries > iCountTries ){
                 iCountMinTries = iCountTries;
@@ -88,5 +89,5 @@ do {
  */
 document.write("<br> You play " + iCountAllGames + " Games");
 document.write("<br> You win " + iCountWinGames + " Games. And lost " + (iCountAllGames - iCountWinGames) + " Games." );
-document.write ("<br> Your best game is in " + iCountMinTries);
+document.write ("<br> Your best game is in " + iCountMinTries + " tries");
 document.write ("<br> Average tries of Win Games :" + (iSumTries / iCountWinGames));
