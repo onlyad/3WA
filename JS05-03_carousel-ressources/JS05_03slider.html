@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            var $slider = $('.slider'); // class or id of carousel slider
+            var $slide = 'li'; // could also use 'img' if you're not using a ul
+            var $transition_time = 1000; // 1 second
+            var $time_between_slides = 4000; // 4 seconds
+
+            function slides(){
+                return $slider.find($slide);
+            }
+
+            slides().fadeOut();
+
+            // set active classes
+            slides().first().addClass('active');
+            slides().first().fadeIn($transition_time);
+
+            // auto scroll
+            $interval = setInterval(
+                    function(){
+                        var $i = $slider.find($slide + '.active').index();
+
+                        slides().eq($i).removeClass('active');
+                        slides().eq($i).fadeOut($transition_time);
+
+                        if (slides().length == $i + 1) $i = -1; // loop to start
+
+                        slides().eq($i + 1).fadeIn($transition_time);
+                        slides().eq($i + 1).addClass('active');
+                    }
+                    , $transition_time +  $time_between_slides
+            );
+        });
+    </script>
+
+    <style>
+
+        .slider {
+            margin: 10px 0;
+            width: 580px; /* Update to your slider width */
+            height: 250px; /* Update to your slider height */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider li {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
+
+
+</head>
+
+
+
+
+
+<body>
+
+
+<ul class="slider">
+    <li>
+        <img src="images/1.jpg"> <!-- random image -->
+    </li>
+    <li>
+        <img src="images/2.jpg"> <!-- random image -->
+    </li>
+    <li>
+        <img src="images/3.jpg"> <!-- random image -->
+    </li>
+    <li>
+        <img src="images/4.jpg"> <!-- random image -->
+    </li>
+</ul>
+
+</body>
+</head>
+<!--<body>-->
+<!--</body>-->
+</html>
