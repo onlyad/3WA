@@ -8,7 +8,7 @@ const iMAX_OPACITY = 1;
 
 var iIntervalMillisec = 3000;
 
-var iOpacity ;
+var iOpacity;
 var sImageDir = "images/";
 var random_display = 0;
 var interval = 1500;
@@ -20,8 +20,7 @@ var interval = 1500;
 
 var iIndex = 1;
 var iSlider;
-var iTimer;
-
+var iTimer1, iTimer2;
 
 
 oTagImg = document.querySelector("img");
@@ -31,27 +30,33 @@ oButtonRandom = document.querySelector(".btn-random");
 
 oButtonNext.onclick = function () {
     iOpacity = 1
-    iIndex = getNextIncr4Slider(iMIN_IMAGES, iMAX_IMAGES);
-    oTagImg.src = "images/" + iIndex + ".jpg";
-    iTimer = setInterval(function(){
+
+    iTimer1 = setInterval(function () {
         if (iOpacity > 0) {
-        iOpacity -= 0.1;
-        oTagImg.style.opacity = iOpacity;
+            iOpacity -= 0.1;
+            oTagImg.style.opacity = iOpacity;
         } else {
-            clearInterval(iTimer);
+            clearInterval(iTimer1);
+            iIndex = getNextIncr4Slider(iMIN_IMAGES, iMAX_IMAGES);
+            oTagImg.src = "images/" + iIndex + ".jpg";
+            //oTagImg.style.opacity = 1;
+            iTimer2 = setInterval(function () {
+                if (iOpacity < 1) {
+                    iOpacity += 0.1;
+                    oTagImg.style.opacity = iOpacity;
+                } else {
+                    clearInterval(iTimer2);
+
+                }
+            }, 100);
         }
-    }, 1500);
+    }, 100);
     oTagImg.style.opacity = 1;
-    //for (iIndex = 1; iIndex >= 0; iIndex-= 0.1) {
-    //    oTagImg.style.opacity = iIndex;
-    //}
+
 
 };
-oButtonNext.onmouseover =  function () {
-    //iTimer = setInterval(function(){
-    //    iOpacity = getPreviousDecr4Slider(0, 1, 0.1);
-    //    oTagImg.style.opacity = iOpacity;
-    //}, 1500);
+oButtonNext.onmouseover = function () {
+
     iIndex = getNextIncr4Slider(iMIN_IMAGES, iMAX_IMAGES);
     oTagImg.src = "images/" + iIndex + ".jpg";
 
@@ -64,20 +69,20 @@ oButtonPrevious.onclick = function () {
 
 };
 
-oButtonPrevious.onmouseover =  function () {
+oButtonPrevious.onmouseover = function () {
 
     iIndex = getPreviousDecr4Slider(iMIN_IMAGES, iMAX_IMAGES, 1);
     oTagImg.src = "images/" + iIndex + ".jpg";
 
 };
 
-oButtonRandom.onclick = function() {
+oButtonRandom.onclick = function () {
     iIndex = getRandIntBetweenMinAndMax(iMIN_IMAGES, iMAX_IMAGES);
     oTagImg.src = "images/" + iIndex + ".jpg";
 }
 
-function btn_Slider () {
-    iSlider = setInterval(function(){
+function btn_Slider() {
+    iSlider = setInterval(function () {
         iIndex = getNextIncr4Slider(iMIN_IMAGES, iMAX_IMAGES);
         oTagImg.src = "images/" + iIndex + ".jpg";
 
@@ -89,7 +94,7 @@ function btn_StopSlider() {
 }
 
 function btn_HideButtons() {
-    if ("Hide Buttons" == document.querySelector(".btn-hideButtons").innerHTML ) {
+    if ("Hide Buttons" == document.querySelector(".btn-hideButtons").innerHTML) {
         document.querySelector(".btn-previous").style.visibility = "hidden";
         document.querySelector(".btn-next").style.visibility = "hidden";
         document.querySelector(".btn-random").style.visibility = "hidden";
