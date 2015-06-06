@@ -32,9 +32,8 @@ for ($iValueFr100To200 = 100; $iValueFr100To200 <= 200; $iValueFr100To200+= 10){
     $iIndexRow++;
 }
 // When the loop for end, $iIndexRow is count one extra number;
-$aNumber100To200 [$iIndexRow] = "Hello1";
-$iIndexRow++;
-$aNumber100To200 [$iIndexRow] = "Hello2";
+$aNumber100To200 [] = "Hello1";
+$aNumber100To200 [] = "Hello2";
 
 for ($iIndexRow = 0; $iIndexRow < count($aNumber100To200); $iIndexRow++) {
     echo "<br>" . $aNumber100To200[$iIndexRow];
@@ -42,11 +41,12 @@ for ($iIndexRow = 0; $iIndexRow < count($aNumber100To200); $iIndexRow++) {
 
 
 //Utiliser la fonction print_r() pour les afficher
-echo "<br>";
+echo "<h3> Display with print_r </h3>" ;
 print_r($aNumber100To200);
 
 
 //Utiliser la fonction var_dump()
+echo "<h3> Display with var_dump </h3>" ;
 var_dump($aNumber100To200);
 
 ?>
