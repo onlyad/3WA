@@ -34,11 +34,11 @@ oButtonNext.onclick = function () {
         //alert ("setInterval 1");
         if (fOpacity > iMIN_OPACITY) {
             fOpacity -= 0.1;
-            oTagImg.style.opacity = fOpacity;
+            oTagImg.style.opacity -= 0.1;
         } else {
 
             clearInterval(iTimer1);
-            //alert("1images/" + iIndex + ".jpg");
+
             iIndex = getNextIncr4Slider(iMIN_IMAGES, iMAX_IMAGES);
             oTagImg.src = "images/" + iIndex + ".jpg";
             document.querySelector("section > figure > figcaption").innerHTML = "Photo " + iIndex;
