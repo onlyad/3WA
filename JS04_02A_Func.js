@@ -95,7 +95,7 @@ function writeSentenceNthWithDifferentTags(sSentence, iNthTime) {
 //    }
 //}
 //
-
+// TODO
 function defineTagsPosition(sTags, iPosStart, iPosEnd, sSentence, iNthTime) {
     var asTags = {h1Start: 1, h1End: 1, h2Start: 2, h2End: 3, pStart: 4, pEnd: 10, liStart: 11};
 
