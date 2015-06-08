@@ -14,18 +14,27 @@
 <section>
 
 
-    <button onclick="btn_HideToolbar()" id="btn_hideToolbar">Hide Buttons</button>
+    <button id="btn_hideToolbar">Hide Buttons</button>
     <div id="toolbar">
-        <button type="button" id="btn_previous">Previous</button>
-        <button type="button" id="btn_next">Next</button>
+
         <button type="button" id="btn_random">Random</button>
-        <button onclick="btn_Slider()" id="btn_slider">Slider</button>
-        <button onclick="btn_StopSlider()" id="btn_stopSlider">Stop Slider</button>
+        <button id="btn_slider">Slide Show</button>
+        <button id="btn_stopSlider">Stop Slide Show</button>
+    </div>
+    <div id="btns_slider">
+
+        <a id="btn_previous" href = "#" title="Previous Photo">
+            <i class = "fa fa-backward"></i> <!--This class display an arrow backward-->
+        </a>
+
+        <a id="btn_next" href = "#" title="Next Photo">
+            <i class = "fa fa-forward"></i> <!--This class display an arrow forward-->
+            </a>
     </div>
 
     <figure>
-        <img src="images/1.jpg">
         <figcaption></figcaption>
+        <img src="images/1.jpg">
     </figure>
 
 </section>

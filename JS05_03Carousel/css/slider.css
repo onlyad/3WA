@@ -1,0 +1,28 @@
+
+/**/
+
+section {
+    text-align: center; /*Align everything inside section*/
+}
+
+body {
+    margin: auto;
+    width: 80%;
+}
+
+
+
+#btn_hideToolbar {
+    margin: auto;
+}
+
+section > figure > figcaption:before {
+    content: " [ Photo ";
+}
+section > figure > figcaption:after {
+    content: " ] ";
+}
+
+#toolbar {
+    margin: 10px 30px 10px;
+}

@@ -43,7 +43,7 @@ for ( iIndex = 0; iIndex < aoTagH2.length; iIndex++) {
 
 var aoTagImg = document.querySelectorAll("img");
 for ( iIndex = 0; iIndex < aoTagImg.length; iIndex++) {
-    aoTagImg[iIndex].src = "logo3WA.png";
+    aoTagImg[iIndex].src = "JS05_02_logo3WA.png";
 }
 var aoTagFooter = document.querySelectorAll("#footer");
 for ( iIndex = 0; iIndex < aoTagFooter.length; iIndex++) {
