@@ -16,27 +16,52 @@
 
 
 <form method="post" action="">
-    <input type="text" name="sInput" value ="mer">
-    <input type="submit" value = "Traduire Francais vers anglais">
+    <input type="text" name="sInput">
+    <input type="submit" name="en-fr" value="Traduire Anglais vers Francais">
+    <input type="submit" name="en-es" value="Traduire Anglais vers Spanish">
+    <input type="submit" name="fr-en" value="Traduire Francais vers Anglais">
 
 </form>
 
 <?php
+
 /**
  * Created by PhpStorm.
  * User: jour
  * Date: 6/6/2015
  * Time: 4:38 PM
  */
-$aDict = ["dog" => ["en" => "dog", "fr" => "chien", "es" => "perro" ],
-          "sea" => ["en" => "sea", "fr" => "mer",    "es" => "mar"],
-          "happy" => ["en" => "happy", "fr" => "heureux", "es"=> "felir"]
-        ];
+$aDictEn2FrNEs = ["dog" => [ "en-fr" => "chien", "en-es" => "perro"],
+    "sea" => [ "en-fr" => "mer", "en-es" => "mar"],
+    "happy" => [ "en-fr" => "heureux", "en-es" => "felir"]
+];
+
+$aDictFr2EnNEs = ["chien" => ["fr-en" => "dog", "fr-es" => "perro"],
+    "mer" => ["fr-en" => "sea",  "fr-es" => "mar"],
+    "heureux" => ["fr-en" => "happy", "fr-es" => "felir"]
+];
+
 var_dump($_POST);
-if(array_key_exists("sInput", $_POST)) {
-    if (array_key_exists($_POST['sInput'], $aDict)) {
-        echo "<br> traduction :" . $aDict[$_POST['sInput']]["fr"];
+$aKeysPOST = array_keys($_POST);
+$sLangTranslate =  $aKeysPOST[1];
+
+if (array_key_exists("sInput", $_POST)) {
+
+    switch ($sLangTranslate) {
+        case "fr-en":
+
+            if (array_key_exists($_POST['sInput'], $aDictFr2EnNEs)) {
+                echo "<br> traduction :" . $aDictFr2EnNEs[$_POST['sInput']][$sLangTranslate];
+                }
+            break;
+        case "en-fr":
+        case "en-es":
+            if (array_key_exists($_POST['sInput'], $aDictEn2FrNEs)) {
+                echo "<br> traduction :" . $aDictEn2FrNEs[$_POST['sInput']][$sLangTranslate];
+                }
+            break;
     }
+
 }
 
 
