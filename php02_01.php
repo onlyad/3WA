@@ -19,8 +19,8 @@ $aFruits = ["lemon" => 1 , "orange" => 2, "banana" => 2.5, "apple" => 1.5, "apri
 
 //Afficher le nom de tous les fruits dans un paragraphe
 echo "<p>";
-foreach ($aFruits as $sKey => $sVal){
-    echo $sKey . ", ";
+foreach ($aFruits as $sFruitsNames => $sPricePerKg){
+    echo $sFruitsNames . ", ";
 }
 echo "</p>";
 
@@ -30,8 +30,8 @@ echo "</p>";
 //Afficher tous les fruits avec leur prix par ordre alphabétique dans une liste html
 ksort($aFruits);
 echo "<ul>";
-foreach ($aFruits as $sKey => $sVal) {
-    echo "<li>" . $sKey . ". Price per kg : " . $sVal . "</li>";
+foreach ($aFruits as $sFruitsNames => $sPricePerKg) {
+    echo "<li>" . $sFruitsNames . ". Price per kg : " . $sPricePerKg . "</li>";
 }
 echo "</ul>";
 
@@ -39,7 +39,7 @@ echo "</ul>";
 //Afficher tous les fruits triés par prix dans une liste numérotée
 asort($aFruits);
 echo "<ol>";
-foreach ($aFruits as $sKey => $sVal){
-    echo "<li>" . $sKey . ". Price per kg : " . $sVal . "</li>";
+foreach ($aFruits as $sFruitsNames => $sPricePerKg){
+    echo "<li>" . $sFruitsNames . ". Price per kg : " . $sPricePerKg . "</li>";
 }
 echo "</ol>";
