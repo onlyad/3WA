@@ -22,7 +22,7 @@
 
 <h1> <?php echo $sTitle; ?></h1>
 
-<form method="post" action="PHP1-5.php?lang=<?= $sLang; ?>">
+
 <form method="post" action="php01_05A.php?lang<?= $sLang; ?>">
     <label>Word</label>
     <select name="word2bTranslated">
