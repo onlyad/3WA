@@ -17,9 +17,11 @@ $rFileTodo = fopen(sFILE_TODO, "r");
 if (false != $rFileTodo) {
     do {
         $aLine  = fgetcsv($rFileTodo);
-        $aaTodo [] = $aLine;
+        if ( false != $aLine) {
+            $aaTodo [] = $aLine;
 //            echo "var_dump :";
 //            var_dump($aLine);
+        }
     } while ( false != $aLine);
 }
 
