@@ -23,7 +23,7 @@ if (false != $rFileTodo) {
     } while ( false != $aLine);
 }
 
-var_dump($aaTodo);
+//var_dump($aaTodo);
 
 foreach ($aaTodo as $asVal){
     echo "<br>";
