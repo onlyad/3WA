@@ -47,3 +47,18 @@ function newImplode($sGlue, $aArray){
     }
     return $sLine;
 }
+
+
+function newImplode1($sGlue, $aArray, $sBegin, $sEnd){
+    $sLine = $sBegin;
+    $iLines = count($aArray) - 1;
+    foreach ($aArray as $iCount=>$sString) {
+
+        $sLine = $sLine . $sString;
+        if ($iLines != $iCount ) {
+            $sLine .= "$sGlue";
+        }
+    }
+    $sLine .= $sEnd;
+    return $sLine;
+}

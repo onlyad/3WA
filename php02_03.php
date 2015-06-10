@@ -17,4 +17,5 @@ displayTitle("Hello", "test");
 displayTitle("Hello", false);
 
 $aArray = [ "1", "2", "3", "4"];
-echo newImplode(";", $aArray );
+//echo newImplode(";", $aArray );
+echo newImplode1(";", $aArray, "Begin", "End" );
