@@ -29,6 +29,10 @@ function textPrint($sString)
 //    }
 //}
 
+/**
+ * @param string $sString
+ * @param integer $iTitleLevel
+ */
 function displayTitle($sString, $iTitleLevel){
     if (is_integer($iTitleLevel) && ($iTitleLevel > 0 && $iTitleLevel <= 6))  {
         echo "<h$iTitleLevel> $sString </h$iTitleLevel>";
