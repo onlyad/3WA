@@ -1,134 +1,81 @@
-<!DOCTYPE html>
+<?php
+include("php02_02B_Func.php");
+//define("sTODO_LIST", "Todo.csv");
+
+$bTaskModify = null;
+
+if (array_key_exists('submit', $_POST)) {
+    if ("2bmodify" == $_POST["submit"]) {
+        $iLineToModif = $_POST['line'];
+        $aTodoLine = get1Todo(sTODO_LIST,$iLineToModif );
+        $sTitle = $aTodoLine[0];
+        $sDescription = $aTodoLine[1];
+        $dDate = $aTodoLine[2];
+        $sPriority = $aTodoLine[3];
+    }else {
+        delTodoLine(sTODO_LIST, $iLineToModif);
+        addTodoLine(sTODO_LIST, $_POST );
+    }
+//<!--$bTaskModify = addTodoLine(sTODO_LIST, $_POST);-->
+}
+?>
+
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+<head>
+    <?php include('header.inc.php'); ?>
 </head>
 <body>
-
-<?php
-include('php02_02_Func.php');
-
-$bTask2Modif = null;
-if (array_key_exists('submit', $_POST)) {
-    $iLineToModif = $_POST['line'];
-    $bTaskModif = modifTodoList(CSV_FILE, $iLineToModif);
-}
-?>
+<?php include('menu.php'); ?>
 
 
-<?php
-/**
- * Created by PhpStorm.
- * User: jour
- * Date: 6/10/2015
- * Time: 11:06 AM
- */
-define("sFILE_TODO", "Todo.csv");
+<div class="container1">
+    <h1>Remove a task</h1>
 
-//$iLine = readline("Which Line to delete?");
-$iLine2bModif = 3;
-$asLineTodoModif;;
-$aaLinesTodo = [];
-
-//if (is_writable(sFILE_TODO)) {
-$rFileTodo = fopen(sFILE_TODO, "r");
-if (false != $rFileTodo) {
-    $iCountLine = 0;
-//        $asLineTodo = fgetcsv($rFileTodo);
-    do {
-        $asLineTodo = fgetcsv($rFileTodo);
-        if ($iLine2bModif == $iCountLine) {
-            $asLineTodoModif = $asLineTodo;
-//            var_dump($asLineTodoModif);
-        }
-        if (false != $asLineTodo) {
-            $aaLinesTodo [] = $asLineTodo;
-        }
-
-        $iCountLine++;
-
-    } while (false != $asLineTodo);
-}
-fclose($rFileTodo);
-
-$sTitle = $asLineTodoModif[0];
-$sDescription = $asLineTodoModif[1];
-$dDate = $asLineTodoModif[2];
-$sPriority = $asLineTodoModif[3];
-
-//var_dump($_POST);
-
-if (array_key_exists("modif", $_POST)) {
-//    echo "<br> modif";
-    $iCountLine = 0;
-    $asLineTodoModif[0] = $_POST["title"];
-    $asLineTodoModif[1] = $_POST["description"];
-    $asLineTodoModif[2] = $_POST["dDate"];
-    $asLineTodoModif[3] = $_POST["priority"];
-//   var_dump($asLineTodoModif);
-    foreach ($aaLinesTodo as $asLineTodo) {
-//        echo "inside foreach";
-//        var_dump($asLineTodo);
-        if ($iLine2bModif == $iCountLine) {
-//            echo "inside ($iLine2bModif == $iCountLine) ";
-            $asLineTodo = $asLineTodoModif;
-//            var_dump($asLineTodo);
-        }
-        $aaLinesTodo[$iCountLine] = $asLineTodo;
-//        echo "<br> after add to aaLignesTodo";
-//        var_dump($aaLinesTodo);
-        $iCountLine++;
-    }
-
-}
-//var_dump($aaLinesTodo);
-
-
-$rFileTodo = fopen(sFILE_TODO, "w");
-if (false != $rFileTodo) {
-    foreach ($aaLinesTodo as $asLineTodo) {
-        fputcsv($rFileTodo, $asLineTodo);
-
-    }
-}
-fclose($rFileTodo);
-
-
-?>
-
-<div class="container">
-    <h1>Modify a task</h1>
-
-    <?php if ($bTaskModif) : ?>
+    <?php if ($bTaskModify) : ?>
         <p class="message">Task removed !</p>
-    <?php elseif (false === $bTaskModif) : ?>
-        <p class="message">Error modif task <?= $iLineToModif; ?></p>
+    <?php elseif (false === $bTaskModify) : ?>
+        <p class="message">Error modify task <?= $iLineNumber; ?></p>
     <?php endif; ?>
 
     <form action="" method="post">
-        <label for="line">Line to delete </label>
+        <label for="line">Line to modify </label>
         <select id="line" name="line">
-            <?php foreach (getTodoLists() as $iLineNumber => $aLine) : ?>
+            <?php foreach (getTodoList(sTODO_LIST) as $iLineNumber => $aLine) : ?>
                 <option value="<?= $iLineNumber; ?>"><?= implode(' - ', $aLine); ?></option>
             <?php endforeach; ?>
         </select>
-        <input type="submit" name="submit"/>
+        <input type="submit" name="submit" value="2bmodify"/>
     </form>
 </div>
-</form>
+</body>
+</html>
 
-<form method="post" action="">
-    Title:
-    <input type="text" name="title" value="<?php echo $sTitle; ?>">
-    Description:
-    <input type="text" name="description" value="<?php echo $sDescription; ?>">
-    Date:
-    <input type="date" name="dDate" value="<?php echo $dDate; ?>">
-    Priority:
-    <input type="text" name="priority" value="<?php echo $sPriority ?>">
-    <input type="submit" name="modif">
-</form>
 
+<div class="container2">
+    <h1>Add a task</h1>
+
+    <?php if ($bTaskModify) : ?>
+        <p class="message">Task modify</p>
+    <?php elseif (false === $bTaskModify) : ?>
+        <p class="message">Error modifying task.</p>
+    <?php endif; ?>
+
+    <form action="" method="post">
+        <div><label for="title">Title</label><input type="text" name="title" id="title" value="<?= $sTitle ?>"/></div>
+        <div><label for="description">Description</label><textarea name="description" id="description"
+                                                                   value="<?= $sDescription; ?>" rows="4"><?= $sDescription ?></textarea>
+        </div>
+        <div><label for="date">Date</label><input type="date" name="date" id="date" value = "<?= $dDate; ?>"/></div>
+        <div><label for="priority">Priority</label><select name="priority" id="priority">
+                <option selected="selected"><?= $sPriority ?></option>
+                <option>High</option>
+                <option>Medium</option>
+                <option>Trivial</option>
+            </select></div>
+        <div>
+            <input type="submit" name="submit" value="modify"/>
+        </div>
+    </form>
+</div>
 </body>
 </html>
