@@ -100,3 +100,7 @@ function delTodoLine($sFileName, $iTodoLine2bRemove)
 //$aaTodoList = getTodoListMinus1Todo("Todo.csv", 3);
 //putTodoList("Todo.csv", $aaTodoList);
 
+function replaceTodoLine ($sFileName, $aPost){
+    $aaTodoList = getTodoList($sFileName);
+
+}

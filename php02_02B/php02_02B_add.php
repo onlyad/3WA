@@ -4,7 +4,8 @@ include('php02_02B_Func.php');
 $bTaskAdded = null;
 
 if (array_key_exists('submit', $_POST)) {
-
+    echo "Inside Add";
+    var_dump($_POST);
     $bTaskAdded = addTodoLine(sTODO_LIST, $_POST);
 }
 ?>

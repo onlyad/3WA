@@ -1,9 +1,11 @@
 <?php
 include("php02_02B_Func.php");
-define("sTODO_LIST", "Todo.csv");
+//define("sTODO_LIST", "Todo.csv");
 
 $bTaskRemoved = null;
 if (array_key_exists('submit', $_POST)) {
+    echo "Inside Del";
+    var_dump($_POST);
     $iLineToRemove = $_POST['line'];
     $bTaskRemoved = delTodoLine(sTODO_LIST, $iLineToRemove);
 }
