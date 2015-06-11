@@ -3,8 +3,13 @@ include("php02_02B_Func.php");
 //define("sTODO_LIST", "Todo.csv");
 
 $bTaskModify = null;
-
+$iLineToModif = null;
+$sTitle = "title";
+$sDescription = "description";
+$dDate = "2015-06-11";
+$sPriority = "Critical";
 if (array_key_exists('submit', $_POST)) {
+
     if ("2bmodify" == $_POST["submit"]) {
         $iLineToModif = $_POST['line'];
         $aTodoLine = get1Todo(sTODO_LIST,$iLineToModif );
@@ -12,9 +17,12 @@ if (array_key_exists('submit', $_POST)) {
         $sDescription = $aTodoLine[1];
         $dDate = $aTodoLine[2];
         $sPriority = $aTodoLine[3];
-    }else {
+    }else if ("modify" == $_POST["submit"] || null != $iLineToModif) {
         delTodoLine(sTODO_LIST, $iLineToModif);
         addTodoLine(sTODO_LIST, $_POST );
+    } else {
+
+        var_dump($_POST);
     }
 //<!--$bTaskModify = addTodoLine(sTODO_LIST, $_POST);-->
 }
