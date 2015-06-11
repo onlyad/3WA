@@ -24,15 +24,18 @@ if (false != $rFileTodo) {
         }
     } while ( false != $aLine);
 }
+fclose($rFileTodo);
 
 //var_dump($aaTodo);
-
+echo "<table>";
 foreach ($aaTodo as $asVal){
-    echo "<br>";
+    echo "<tr>";
     foreach ($asVal as $sVal  ){
-        echo   $sVal . ", "  ;
+        echo "<td> $sVal  </td>"  ;
     }
+    echo "</tr>";
 }
+echo "</table>";
 
-fclose($rFileTodo);
+
 ?>

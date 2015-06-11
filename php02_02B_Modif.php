@@ -6,6 +6,16 @@
 </head>
 <body>
 
+<?php
+include('php02_02_Func.php');
+
+$bTask2Modif = null;
+if (array_key_exists('submit', $_POST)) {
+    $iLineToModif = $_POST['line'];
+    $bTaskModif = modifTodoList(CSV_FILE, $iLineToModif);
+}
+?>
+
 
 <?php
 /**
@@ -87,8 +97,25 @@ fclose($rFileTodo);
 
 ?>
 
-<form name="modif" action ="" method = "POST">
-    <input type="radio" name = "todo" value ="">
+<div class="container">
+    <h1>Modify a task</h1>
+
+    <?php if ($bTaskModif) : ?>
+        <p class="message">Task removed !</p>
+    <?php elseif (false === $bTaskModif) : ?>
+        <p class="message">Error modif task <?= $iLineToModif; ?></p>
+    <?php endif; ?>
+
+    <form action="" method="post">
+        <label for="line">Line to delete </label>
+        <select id="line" name="line">
+            <?php foreach (getTodoLists() as $iLineNumber => $aLine) : ?>
+                <option value="<?= $iLineNumber; ?>"><?= implode(' - ', $aLine); ?></option>
+            <?php endforeach; ?>
+        </select>
+        <input type="submit" name="submit"/>
+    </form>
+</div>
 </form>
 
 <form method="post" action="">
