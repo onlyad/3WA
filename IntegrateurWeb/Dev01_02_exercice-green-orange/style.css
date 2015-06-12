@@ -1,0 +1,74 @@
+body {
+    font-family: sans-serif;
+}
+
+.container0 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.container2 {
+    margin-left: 250px;
+    border-bottom-style: solid;
+    border-color: #2A8782;
+}
+.left_logo {
+    width: 30%;
+    float: left;
+}
+
+body {
+    background-image: url("images/header_bg.png");
+    background-repeat: no-repeat;
+
+}
+
+#capitalize {
+    text-transform: capitalize;
+    color: #888888;
+    padding: 0px;
+}
+
+.left_WhoWeAre {
+    width: 30%;
+    float: left;
+}
+
+.right_WhatWeDo {
+    width: 70%;
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.yellow {
+    color: orange;
+}
+.green {
+    color: green;
+}
+
+div > ul {
+    list-style-type: none;
+
+}
+
+div > ul > li {
+    display: inline-block;
+    background-color: green;
+    color: #ffffff;
+}
+
+.highlighted {
+    background-color: beige;
+    color: green;
+}
+p {
+    font-size: 12px;
+}
+.justify_up {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}

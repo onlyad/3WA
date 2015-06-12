@@ -1,0 +1,16 @@
+.gauche {
+    width: 50%;
+    float: left;
+    background-color: #347bff;
+}
+
+.droite {
+    width: 50%;
+    float: right;
+    background-color: #00968B;
+}
+
+.clear {
+    clear: both;
+}
+
