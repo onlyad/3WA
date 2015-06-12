@@ -22,10 +22,11 @@ if (array_key_exists('submit', $_POST)) {
         $dDate = $aTodoLine[2];
         $sPriority = $aTodoLine[3];
     }else if ("modify" == $_POST["submit"] ) {
+        replaceTodoLine(sTODO_LIST, $_POST);
 //        echo "Modify";
 //        var_dump($_POST);
-        delTodoLine(sTODO_LIST, $_POST["line2bModify"]);
-        addTodoLine(sTODO_LIST, $_POST );
+//        delTodoLine(sTODO_LIST, $_POST["line2bModify"]);
+//        addTodoLine(sTODO_LIST, $_POST );
     }
 //<!--$bTaskModify = addTodoLine(sTODO_LIST, $_POST);-->
 }

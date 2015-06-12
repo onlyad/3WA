@@ -102,5 +102,10 @@ function delTodoLine($sFileName, $iTodoLine2bRemove)
 
 function replaceTodoLine ($sFileName, $aPost){
     $aaTodoList = getTodoList($sFileName);
-
+    $aTodoLine [] = $aPost["title"];
+    $aTodoLine [] = $aPost["description"];
+    $aTodoLine [] = $aPost["date"];
+    $aTodoLine [] = $aPost["priority"];
+    $aaTodoList[$aPost["line2bModify"]] = $aTodoLine;
+    putTodoList($sFileName, $aaTodoList);
 }

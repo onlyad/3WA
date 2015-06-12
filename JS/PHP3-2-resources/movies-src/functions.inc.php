@@ -36,7 +36,7 @@ function displayMovie(array $aMovie, array $aCovers, $iMoviePos = 0)
     $iIndexCover = $aMovie["cover"];
     $sCoverName = $aCovers[$iIndexCover];
     $sTitle = $aMovie['title'];
-    echo "<a href = 'movie.php'> <img src=images/$sCoverName></a>";
+    echo "<a href = 'movie.php?MoviePos=<?= $iMoviePos; ?>'> <img src=images/$sCoverName></a>";
     echo "<h1>$sTitle" . "  " . displayDuration($aMovie["duration"]) . "</h1>";
 
 }
