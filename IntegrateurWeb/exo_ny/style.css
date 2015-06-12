@@ -10,7 +10,15 @@ body{
     margin-right: auto;
 
 }
+h1 {
+    font-weight: 100;
+}
 h2 {
-    background-color: #fff ; 
+    background-color: #fff ;
     padding: 10px;
+    font-weight: 100;
+}
+
+a {
+    text-decoration: none;
 }
