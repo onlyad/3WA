@@ -1,0 +1,7 @@
+largeur du site : 600px
+Graisse du texte : 100
+Taille du texte : 14px
+Interlignage : 21px
+Police de caractère : Helvetica
+Couleur de fond : #eee
+Couleur et épaisseur de trait sous le titre : 3px et #ccc
