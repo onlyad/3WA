@@ -16,10 +16,13 @@ body {
     width: 30%;
     float: left;
 }
+.right_foto_header {
 
+}
 body {
-    background-image: url("images/header_bg.png");
+    /*background-image: url("images/header_bg.png");*/
     background-repeat: no-repeat;
+
 
 }
 
@@ -68,7 +71,7 @@ div > ul > li {
 p {
     font-size: 12px;
 }
-.justify_up {
+.remove_padding {
     margin-top: 1px;
     margin-bottom: 1px;
 }
