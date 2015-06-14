@@ -1,10 +1,11 @@
 body {
-    width: 50%;
+    width: 75%;
     margin-left: auto;
     margin-right: auto;
     background-image: url("../images/body_bg.png");
     background-repeat: repeat-x;
-    background-position: 10% 08%;
+    background-position: 10% 12%;
+    /*font-size: 14px;*/
 }
 
 header {
@@ -47,26 +48,38 @@ nav > ul > li > a {
 
 
 #h1FreshResto {
-    padding-left: 55%;
-    /*margin-left: 400px;*/
+    padding-left: 50%;
+    font-size: 50px;
 
     color: #fff;
     opacity: 1;
 }
 #h2JustifyRight {
-    padding-left: 55%;
+    padding-left: 50%;
 }
 
 #pJustifyRight {
-    padding-left: 55%;
+    padding-left: 50%;
 }
+.h2JustifyLeft {
+    margin-left: 38%;
+}
+.h2Box {
+    padding-bottom: 10px;
+    border-bottom: solid 3px #FAF0E6;
 
+}
 .h2ColorRed {
     color: #D66C4C;
+
 }
 aside {
     float: left;
     width: 30%;
+    margin-right: 02%;
+}
+aside > ul {
+    list-style-type: square;
 }
 
 .h3RemoveMarginBottom {
@@ -74,13 +87,61 @@ aside {
 }
 .pRemoveMarginTop {
     margin-top: 3px;
+    font-size: 12px;
+}
+
+.spanColorGreen {
+    color: #9AA809;
+    font-weight: 700;
 }
 
 #artColCenter{
     float: left;
     width: 30%;
+    margin-left: 02%;
+}
+
+#figRemoveMarginRight {
+    margin-right: 0;
+}
+
+.figcPolice {
+    font-size: 13px;
+}
+.pMarginLeft {
+    margin-left: 35px;
+    font-size: 14px;
 }
 #artColRight{
     float: right;
     width: 30%;
+}
+.imgFloat {
+    float: left;
+    margin-right: 15px;
+}
+figcaption {
+    margin-top: 20px;
+    /*font-size: 12px;*/
+}
+.figcJustifyDown {
+
+    margin-top: 20px;
+}
+.menuBottom {
+    background-color:#9B9176 ;
+    color: #fff;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+div > ul {
+    list-style-type: none;
+    margin-left: 27% ;
+}
+div > ul > li {
+    display: inline-block;
+}
+.pCenter {
+    margin-left: 40%;
+    font-size: 12px;
 }
