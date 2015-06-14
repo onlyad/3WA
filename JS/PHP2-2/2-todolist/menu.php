@@ -1,4 +1,4 @@
-<nav class="menu">
+<nav class="contMenu">
     <ul>
         <li><a href="index.php">List</a></li>
         <li><a href="add.php">Add</a></li>

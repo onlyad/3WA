@@ -1,24 +1,24 @@
-nav.menu {
+nav.contMenu {
     margin: 0 auto;
     padding: 10px 0;
     text-align: center;
     background-color: #000;
 }
 
-nav.menu ul {
+nav.contMenu ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-nav.menu ul li {
+nav.contMenu ul li {
     margin: 0 10px;
     padding: 0;
     list-style-type: none;
     display: inline-block;
 }
 
-nav.menu ul li a {
+nav.contMenu ul li a {
     display: inline-block;
     padding: 10px 50px;
     text-decoration: none;
@@ -30,7 +30,7 @@ nav.menu ul li a {
     text-transform: uppercase;
 }
 
-nav.menu ul li a:hover {
+nav.contMenu ul li a:hover {
     background-color: #888;
     color: #fff;
     transition: all 300ms;

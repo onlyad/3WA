@@ -1,0 +1,66 @@
+body {
+
+
+}
+
+header {
+    background-image: url("../images/header_bg.png");
+    background-repeat: no-repeat;
+    height: 300px;
+}
+#contLeftImgHeader {
+}
+
+nav {
+    margin-left: 30%;
+
+}
+
+nav > ul {
+    margin-left: 12%;
+
+
+}
+
+nav > ul > li {
+
+    display: inline-block;
+    background-image: url("../images/puce.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    padding-top: 15px; /* to */
+    color: #CDC5B0;
+    font-size: 12px;
+    margin-left: 20px;
+
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: #CDC5B0;
+}
+
+
+#h1FreshResto {
+    padding-left: 55%;
+    /*margin-left: 400px;*/
+    background-image: url("../images/body_bg.png");
+    color: #fff;
+    opacity: 1;
+}
+#h2JustifyRight {
+    padding-left: 55%;
+}
+
+#pJustifyRight {
+    padding-left: 55%;
+}
+
+.h2ColorRed {
+    color: #D66C4C;
+}
+aside {
+    float: left;
+    width: 30%;
+
+}

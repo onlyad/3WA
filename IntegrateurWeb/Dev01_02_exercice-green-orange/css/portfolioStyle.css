@@ -1,0 +1,59 @@
+#container {
+    width: 80%;
+}
+
+#contLeftCieLogo {
+    width: 30%;
+    float: left;
+}
+
+#contRightTitle {
+    width: 70%;
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+nav {
+    border-bottom: solid 3px #6DAE18;
+    /*border-color: #6DAE18;*/
+    height: 25px;
+    margin-bottom: 20px;
+}
+
+nav > ul {
+    list-style-type: none;
+    margin-left: 200px;
+}
+
+nav > ul > li {
+    display: inline-block;
+    background-color: #6DAE18;
+    color: #fff;
+    text-align: right;
+    border-radius: 04px 04px 0 0;
+    padding: 05px;
+    font-size: 14px;
+    font-weight: 300;
+}
+figure {
+    width: 36%;
+    margin: 8px auto;
+}
+
+div.stretchy-wrapper {
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    position: relative;
+    background: black;
+}
+
+div.stretchy-wrapper > div {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
