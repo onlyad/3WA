@@ -62,7 +62,7 @@ if (array_key_exists('submit', $_POST)) {
 </div>
 
 
-<div class="container2">
+<div class="menu">
     <h1>Modify a task</h1>
 
     <?php if ($bTaskModify) : ?>

@@ -1,77 +1,134 @@
 body {
-    font-family: sans-serif;
+
 }
 
 .container0 {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    font-family: sans-serif;
+
 }
-.container2 {
-    margin-left: 250px;
-    border-bottom-style: solid;
-    border-color: #2A8782;
+
+.headerBox {
+    background-image: url("images/header_bg.png");
+    background-repeat: no-repeat;
+    height: 300px;
+
 }
+
+
 .left_logo {
     width: 30%;
     float: left;
 }
-.right_foto_header {
+
+
+
+.location {
+    font-size: 14px;
+    padding-left: 15px;
+    color: #989898;
+    font-weight: 100;
+    padding-bottom: 0;
+}
+
+.aboutUs {
+    font-size: 18px;
+    padding-top: 0;
+    padding-left: 15px;
+    color: #989898;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+div > ul {
+    list-style-type: none;
+    margin-left: 200px;
 
 }
-body {
-    /*background-image: url("images/header_bg.png");*/
-    background-repeat: no-repeat;
 
+div > ul > li {
+    display: inline-block;
+    background-color: #6DAE18;
+    color: #fff;
+    text-align: right;
+    border-radius: 04px 04px 0 0;
+    padding: 05px;
+    font-size: 14px;
+    font-weight: 300;
 
 }
 
-#capitalize {
-    text-transform: capitalize;
-    color: #888888;
-    padding: 0px;
+.menu {
+
+    border-bottom: solid 3px #6DAE18;
+    /*border-color: #6DAE18;*/
+    height: 23px;
+    margin-bottom: 20px;
 }
+
+.h1RemovePadding {
+    margin-top: 1px;
+    margin-bottom: 0;
+}
+
 
 .left_WhoWeAre {
-    width: 30%;
+    width: 38%;
     float: left;
+    /*padding: 10px 10px 10px 10px;*/
+    margin-top: 1px;
 }
 
 .right_WhatWeDo {
-    width: 70%;
-    float: right;
+    width: 57%;
+    float: left;
+    border-left: solid 1px grey;
+    padding-left:  20px;
+    margin-top: 1px;
 }
 
 .clear {
     clear: both;
 }
 
-.yellow {
-    color: orange;
+.h1Yellow {
+    color: #F9C002;
+    font-weight: 100;
+    margin-bottom: 5px;
+    margin-top: 0;
+
 }
+
 .green {
-    color: green;
+    color: #76A728;
+    font-size: 14px;
+}
+.yellow{
+    color: #F9C002;
 }
 
-div > ul {
-    list-style-type: none;
+
+.puceHighlighted {
+    background-color: #EAEAEA;
+    color: #76A728;
+    font-weight: 500;
+    padding-right: 30px;
+    border-radius: 1px 8px 8px 1px;
 
 }
 
-div > ul > li {
-    display: inline-block;
-    background-color: green;
-    color: #ffffff;
-}
-
-.highlighted {
-    background-color: beige;
-    color: green;
-}
 p {
     font-size: 12px;
 }
-.remove_padding {
-    margin-top: 1px;
-    margin-bottom: 1px;
+
+.imgWhatWeDo_Float {
+    float: left;
+    margin-right: 10px;
+
+}
+.footer_AlignRight {
+    font-size: 14px;
+    text-align: right ;
 }
