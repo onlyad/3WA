@@ -12,7 +12,7 @@ if (array_key_exists('submit', $_POST)) {
     <?php include('header.inc.php'); ?>
 </head>
 <body>
-<?php include('php02_02B_Menu.php'); ?>
+<?php include('menu.php'); ?>
 <div class="container">
     <h1>Remove a task</h1>
 

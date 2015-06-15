@@ -1,12 +1,10 @@
 <?php
-include('php02_02B_Func.php');
+include('functions.php');
 
 $bTaskAdded = null;
 
 if (array_key_exists('submit', $_POST)) {
-    echo "Inside Add";
-    var_dump($_POST);
-    $bTaskAdded = addTodoLine(sTODO_LIST, $_POST);
+    $bTaskAdded = addTodoList(CSV_FILE, $_POST);
 }
 ?>
 
@@ -15,7 +13,7 @@ if (array_key_exists('submit', $_POST)) {
     <?php include('header.inc.php'); ?>
 </head>
 <body>
-<?php include('php02_02B_Menu.php'); ?>
+<?php include('menu.php'); ?>
 <div class="container">
     <h1>Add a task</h1>
 

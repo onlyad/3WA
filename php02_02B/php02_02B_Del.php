@@ -15,7 +15,7 @@ if (array_key_exists('submit', $_POST)) {
     <?php include('header.inc.php'); ?>
 </head>
 <body>
-<?php include('menu.php'); ?>
+<?php include('php02_02B_Menu.php'); ?>
 <div class="container">
     <h1>Remove a task</h1>
 

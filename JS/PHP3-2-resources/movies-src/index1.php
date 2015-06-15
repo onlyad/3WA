@@ -10,6 +10,7 @@ include('functions.inc.php');
 
 $sTitlePage = "Films à l'affiche";
 $aSearchMovies = $aMovies;
+$iDurationMax = null;
 if (array_key_exists("type", $_POST)){
 
     if ("cinema" == $_POST["type"] ){

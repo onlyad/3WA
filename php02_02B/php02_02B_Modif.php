@@ -8,6 +8,7 @@ $sTitle = "title";
 $sDescription = "description";
 $dDate = "2015-06-11";
 $sPriority = "Critical";
+$iLineToModif = null;
 //echo "Initialize $iLineToModif ";
 var_dump ($_POST );
 if (array_key_exists('submit', $_POST)) {
@@ -37,7 +38,7 @@ if (array_key_exists('submit', $_POST)) {
     <?php include('header.inc.php'); ?>
 </head>
 <body>
-<?php include('menu.php'); ?>
+<?php include('php02_02B_Menu.php'); ?>
 
 
 <div class="container1">
@@ -46,7 +47,7 @@ if (array_key_exists('submit', $_POST)) {
     <?php if ($bTaskModify) : ?>
         <p class="message">Task to be modify !</p>
     <?php elseif (false === $bTaskModify) : ?>
-        <p class="message">Error modify task <?= $iLineNumber; ?></p>
+        <p class="message">Error modify task <?= $iLineToModif; ?></p>
     <?php endif; ?>
 
 

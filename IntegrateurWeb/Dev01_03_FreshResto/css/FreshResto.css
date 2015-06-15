@@ -128,20 +128,25 @@ figcaption {
 
     margin-top: 20px;
 }
-.menuBottom {
+div.contMenuBottom {
     background-color:#9B9176 ;
     color: #fff;
     padding-top: 1%;
     padding-bottom: 1%;
 }
-div > ul {
+div.contMenuBottom> ul {
     list-style-type: none;
-    margin-left: 27% ;
+    /*margin-left: 27% ;*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
 }
-div > ul > li {
+div.contMenuBottom > ul > li {
     display: inline-block;
 }
 .pCenter {
-    margin-left: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
     font-size: 12px;
 }
