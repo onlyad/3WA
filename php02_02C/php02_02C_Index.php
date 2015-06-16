@@ -26,7 +26,7 @@ include("php02_02C_Func.php");
         </tr>
         </thead>
         <tbody>
-        <?php foreach (getTodoList(sFileName) as $aTodoLine) : ?>
+        <?php foreach (getTodoList(sTODO_LIST) as $aTodoLine) : ?>
             <tr>
                 <td><?= $aTodoLine[0]; ?></td>
                 <td><?= $aTodoLine[1]; ?></td>

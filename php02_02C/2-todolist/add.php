@@ -27,7 +27,7 @@ if (array_key_exists('submit', $_POST)) {
         <div><label for="title">Title</label><input type="text" name="title" id="title" value="title"/></div>
         <div><label for="description">Description</label><textarea name="description" id="description" rows="4">description</textarea>
         </div>
-        <div><label for="date">Date</label><input type="date" name="date" id="date"/></div>
+        <div><label for="date">Date</label><input type="date" name="date" id="date" value="<?= Date("Y-m-d"); ?>"/></div>
         <div><label for="priority">Priority</label><select name="priority" id="priority">
                 <option selected="selected">Critical</option>
                 <option>High</option>
