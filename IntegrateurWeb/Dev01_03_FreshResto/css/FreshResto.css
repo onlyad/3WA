@@ -17,18 +17,18 @@ header {
 
 }
 
-nav {
+nav.menuTop {
     margin-left: 30%;
 
 }
 
-nav > ul {
+nav.menuTop > ul {
     margin-left: 12%;
 
 
 }
 
-nav > ul > li {
+nav.menuTop > ul > li {
 
     display: inline-block;
     background-image: url("../images/puce.png");
@@ -41,7 +41,7 @@ nav > ul > li {
 
 }
 
-nav > ul > li > a {
+nav.menuTop > ul > li > a {
     text-decoration: none;
     color: #CDC5B0;
 }
@@ -54,6 +54,10 @@ nav > ul > li > a {
     color: #fff;
     opacity: 1;
 }
+
+a {
+    color: #000000;
+}
 #h2JustifyRight {
     padding-left: 50%;
 }
@@ -61,15 +65,15 @@ nav > ul > li > a {
 #pJustifyRight {
     padding-left: 50%;
 }
-.h2JustifyLeft {
+.h1JustifyLeft {
     margin-left: 38%;
 }
-.h2Box {
+.h1Box {
     padding-bottom: 10px;
     border-bottom: solid 3px #FAF0E6;
 
 }
-.h2ColorRed {
+.h1ColorRed {
     color: #D66C4C;
 
 }
@@ -95,13 +99,20 @@ aside > ul {
     font-weight: 700;
 }
 
+div.main ul li a {
+    text-decoration: none;
+    color: #9AA809;
+    font-weight: 700;
+}
+
+
 #artColCenter{
     float: left;
     width: 30%;
     margin-left: 02%;
 }
 
-#figRemoveMarginRight {
+figure.figRemoveMarginRight {
     margin-right: 0;
 }
 
@@ -110,7 +121,9 @@ aside > ul {
 }
 .pMarginLeft {
     margin-left: 35px;
+    margin-top: 25px;
     font-size: 14px;
+    
 }
 #artColRight{
     float: right;
@@ -128,21 +141,24 @@ figcaption {
 
     margin-top: 20px;
 }
-div.contMenuBottom {
+nav.menuBottom {
     background-color:#9B9176 ;
     color: #fff;
     padding-top: 1%;
     padding-bottom: 1%;
+    text-align: center;
 }
-div.contMenuBottom> ul {
+nav.menuBottom> ul {
     list-style-type: none;
-    /*margin-left: 27% ;*/
-    margin-left: auto;
-    margin-right: auto;
-    width: 55%;
+
 }
-div.contMenuBottom > ul > li {
+nav.menuBottom > ul > li {
     display: inline-block;
+}
+
+nav.menuBottom a {
+    color: #fff;
+    text-decoration: none;
 }
 .pCenter {
     margin-left: auto;

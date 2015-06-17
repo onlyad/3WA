@@ -10,7 +10,7 @@
 <div class="container">
     <header>
 
-        <nav>
+        <nav class="menuTop">
             <ul>
                 <li><a href="#">Home page</a></li>
                 <li><a href="#">About us</a></li>
@@ -21,78 +21,88 @@
         </nav>
 
         <h1 id="h1FreshResto"> Fresh Restaurant</h1>
+        <article>
+            <h2 id="h2JustifyRight">Welcome <span class="h2ColorRed">to our Restaurant</span></h2>
 
-        <h2 id="h2JustifyRight">Welcome <span class="h2ColorRed">to our Restaurant</span></h2>
-
-        <p id="pJustifyRight"> <span class="spanColorGreen"> Ipsum is simply dummy text of the printing</span> and typesetting industry. Lorem Ipsum
-            has been the industry's standard dummy text ever
-        </p>
+            <p id="pJustifyRight"><span class="spanColorGreen"> Ipsum is simply dummy text of the printing</span> and
+                typesetting industry. Lorem Ipsum
+                has been the industry's standard dummy text ever <a href="#">Read more</a>
+            </p>
+        </article>
     </header>
-    <section class="clearfix">
+
+    <div class="main">
         <aside>
-            <h2 class="h2Box">News <span class="h2ColorRed"> & Events</span></h2>
+            <h1 class="h1Box">News <span class="h1ColorRed"> & Events</span></h1>
             <ul>
-                <li><span class="spanColorGreen">18.01.07</span>
+                <li><span class="spanColorGreen"><a href="#">18.01.07</a></span>
 
                     <p class="pRemoveMarginTop">Lorem Ipsum is simply dummy text of the printing and typesetting
                         industry.
                     </p>
                 </li>
-                <li><span class="spanColorGreen">17.01.07</span>
+                <li><span class="spanColorGreen"><a href="#">17.01.07</a></span>
 
                     <p class="pRemoveMarginTop">Lorem Ipsum is simply dummy text of the printing and typesetting
                         industry.
                     </p>
-                <li><span class="spanColorGreen">15.01.07</span>
+                <li><span class="spanColorGreen"><a href="#">15.01.07</a></span>
 
                     <p class="pRemoveMarginTop">Lorem Ipsum is simply dummy text of the printing and typesetting
                         industry.
                     </p>
                 </li>
-                <li><span class="spanColorGreen">more news</span>
+                <li><span class="spanColorGreen"><a href="#">more news</a></span>
                 </li>
             </ul>
         </aside>
-        <h2 class="h2JustifyLeft h2Box">Today's <span class="h2ColorRed"> Special Recipes</span> </h2>
-        <article id="artColCenter">
 
-            <figure id="figRemoveMarginRight">
-                <img src="images/recette1.png" class="imgFloat">
-                <figcaption class="figcPolice"><br><span class="spanColorGreen">Lorem Ipsum</span><br>
-                    is simply dummy text of the printing and typesetting
-                    industry.
-                </figcaption>
-            </figure>
-            <br>
-            <br>
-            <p class="pMarginLeft"><span class="spanColorGreen">Lorem Ipsum is simply dummy </span><br>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy text ever
-            </p>
-        </article>
-        <article id="artColRight">
-            <figure id="figRemoveMarginRight">
-                <img src="images/recette2.png" class="imgFloat">
-                <figcaption class="figcPolice"><br><span class="spanColorGreen">Lorem Ipsum</span><br>
-                    is simply dummy text of the printing and typesetting
-                    industry.
-                </figcaption>
-            </figure>
-            <br>
-            <br>
-            <p class="pMarginLeft"><span class="spanColorGreen">Lorem Ipsum is simply dummy </span><br>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy text ever.
-            </p>
-        </article>
+        <section class="clearfix">
+            <h1 class="h1JustifyLeft h1Box">Today's <span class="h1ColorRed"> Special Recipes</span></h1>
+            <article id="artColCenter">
 
-    </section>
-    <div class="contMenuBottom">
+                <figure class="figRemoveMarginRight">
+                    <img src="images/recette1.png" class="imgFloat">
+                    <figcaption class="figcPolice"><br><span class="spanColorGreen">Lorem Ipsum</span><br>
+                        is simply dummy text of the printing and typesetting
+                        industry.
+                    </figcaption>
+                </figure>
+
+                <p class="pMarginLeft"><span class="spanColorGreen">Lorem Ipsum is simply dummy </span><br>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been <a href="#">Read more</a>
+                </p>
+            </article>
+            <article id="artColRight">
+                <figure class="figRemoveMarginRight">
+                    <img src="images/recette2.png" class="imgFloat">
+                    <figcaption class="figcPolice"><br><span class="spanColorGreen">Lorem Ipsum</span><br>
+                        is simply dummy text of the printing and typesetting
+                        industry.
+                    </figcaption>
+                </figure>
+
+                <p class="pMarginLeft"><span class="spanColorGreen">Lorem Ipsum is simply dummy </span><br>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been <a href="#">Read more</a>
+                </p>
+            </article>
+
+        </section>
+    </div>
+    <nav class="menuBottom">
         <ul>
-            <li>Home |</li><li>About Us |</li><li>Location |</li><li>Menu |</li><li>Partners |</li><li>News |</li><li>Contact Us</li>
+            <li><a href="#">Home</a> |</li>
+            <li><a href="#">About Us</a> |</li>
+            <li><a href="#">Location</a> |</li>
+            <li><a href="#">Menu</a> |</li>
+            <li><a href="#">Partners</a> |</li>
+            <li><a href="#">News</a> |</li>
+            <li><a href="#">Contact Us</a></li>
         </ul>
 
-    </div>
+    </nav>
     <footer>
         <p class="pCenter">Copyright © Your Company Name</p>
     </footer>
