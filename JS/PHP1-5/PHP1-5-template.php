@@ -15,7 +15,7 @@
 
 <p><?php echo $sTransateSentence; ?></p>
 
-<form method="post" action="5.php?lang=<?= $sLang; ?>">
+<form method="post" action="PHP1-5.php?lang=<?= $sLang; ?>">
     <label>Word</label>
     <select name="word">
         <?php for ($iPos = 0; $iPos < count($aListedWords); $iPos++) {

@@ -39,6 +39,6 @@ if (array_key_exists('word', $_POST)) {
 }
 
 
-include('5-template.php');
+include('PHP1-5-template.php');
 
 
