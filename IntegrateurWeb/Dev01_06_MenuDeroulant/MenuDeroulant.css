@@ -6,30 +6,44 @@
 nav.topMenu {
     list-style-type: none;
     background-color: #585858;
+}
 
+nav.topMenu > ul {
+    color: white;
+    font-size: 18px;
 
 }
 
 nav.topMenu > ul > li {
 
     display: inline-block;
-    padding-left: 30px;
+    padding: 10px 10px 10px 30px;
     color: white;
     text-align: center;
 }
 
+nav.topMenu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+nav.topMenu a:hover {
+    background-color: red ;
+
+}
 nav.topMenu > ul >li > ul {
     list-style-type: none;
     background-color: #585858;
-    color: white;
+
     position: absolute;
     display: none;
-    padding:0;
+    padding: 10px;
 }
 
 nav.topMenu > ul >li:hover >ul   {
     display: block;
-    background-color: red;
+
 }
 a.tooltip {
     position: relative; /* l'origine est le lien hypertext */
