@@ -28,10 +28,12 @@ const iMAX_TRY = 5;
 var iCountGame = 0;
 var iCountWinGame = 0;
 var iCountTryBest = 0;
+var iTotalTry = 0;
 
 
 
 do {
+    dStartTime = new Date();
     iCountGame++;
     iRangeMin = getIntFromUser("Please choose a min number:");
     iRangeMax = getIntFromUser("Please choose a max number: ");
@@ -54,16 +56,20 @@ do {
     if (iComputerRandomNumber == iUserChosenNumber) {
         document.write("<br> U guess it right. The Random Number is :" + iComputerRandomNumber);
         iCountWinGame++;
-        if (iCountWinGame = 1) {
+        iTotalTry += iCountTry;
+        if (1 == iCountWinGame) {
             iCountTryBest = iCountTry;
-        } else {
-            if (iCountTry < iCountTryBest) {
+        } else if (iCountTry < iCountTryBest) {
                 iCountTryBest = iCountTry;
-            }
         }
-
+    } else {
+        document.write("<br> U loose by guessing more than " + iMAX_TRY + " try.")
     }
 
-} while (confirm("Play Again?"));
+    dEndTime = new Date();
+} while (confirm("Play Again?") && (dEndTime - dStartTime) < 5000 );
 
-document.write("<br> U play " + iCountWinGame + " game, Ur best play is with " + iCountTryBest + " guess");
+document.write("<br> U win " + iCountWinGame + " game, Ur best play is with " + iCountTryBest + " guess");
+document.write ("<br> U play " + iCountGame + " game. U win " + iCountWinGame + ". U loose " + (iCountGame - iCountWinGame) +
+" games");
+document.write ("<br> Average of try by Victory: " + (iTotalTry / iCountWinGame ));

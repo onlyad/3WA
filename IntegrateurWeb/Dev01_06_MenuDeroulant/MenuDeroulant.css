@@ -3,24 +3,24 @@
     margin: 0 auto;
 }
 
-nav.topMenu {
+ul.menuDeroulant {
     list-style-type: none;
     background-color: #585858;
-}
-
-nav.topMenu > ul {
     color: white;
     font-size: 18px;
-
 }
 
-nav.topMenu > ul > li {
-
+ul.menuDeroulant > li {
     display: inline-block;
     padding: 10px 10px 10px 30px;
     color: white;
     text-align: center;
+    cursor: pointer;
+    width: 100px;
+    position: relative; /* This position relative is used later on with Position Absolute, top & left to correct the position of the Menu deroulant */
+
 }
+
 
 nav.topMenu a {
     text-decoration: none;
@@ -28,17 +28,27 @@ nav.topMenu a {
     font-size: 18px;
 }
 
-nav.topMenu a:hover {
+/* by hovering over li, we highligthed the whole li, not just the a */
+nav.topMenu li:hover {
     background-color: red ;
 
 }
-nav.topMenu > ul >li > ul {
+ul.menuDeroulant   ul {
     list-style-type: none;
     background-color: #585858;
 
     position: absolute;
-    display: none;
-    padding: 10px;
+    left: 0;
+    top: 34px;
+    /*display: none;*/
+    /*padding: 10px;*/
+
+}
+ul.menuDeroulant ul li {
+    width: 100px;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
 }
 
 nav.topMenu > ul >li:hover >ul   {

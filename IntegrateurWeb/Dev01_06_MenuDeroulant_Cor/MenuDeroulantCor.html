@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Menu</title>
+	<style type="text/css">
+
+/* **************************************************
+	GENERALITIES
+************************************************** */
+
+	body {
+		font-family: sans-serif;
+		color: #555;
+		background-color: #eee;
+	}
+	.container {
+		width: 800px;
+		margin: 1em auto;
+		padding: 1em;
+		background-color: #fff;
+	}
+	p {
+		text-align: justify;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		background-color: #333;
+		color: #fff;
+	}
+	a {
+		text-decoration: none;
+		color: #c33;
+	}
+	a:hover {
+		text-decoration: underline;
+		color: #333;
+	}
+
+/* **************************************************
+	MENU
+************************************************** */
+
+
+	ul.menu {
+		width: 100%;
+	}
+	ul.menu li {
+		position: relative;
+		padding: 0.5em 2em;
+		cursor: pointer;
+	}
+	ul.menu ul li {
+		width: 100px;
+		border-top: 1px solid #f39;
+	}
+	ul.menu>li {
+		display: inline-block;
+	}
+	ul.menu ul {
+		position: absolute;
+		left: 0;
+		top: 34px;
+		display: none;
+	}
+	ul.menu li:hover ul {
+		display: block;
+	}
+	ul.menu li:hover {
+		background: #c33;
+	}
+	ul.menu a {
+		color: #eee;
+	}
+	ul.menu li:hover a {
+		text-decoration: none;
+	}
+
+/* **************************************************
+	SIMPLE TOOLTIP
+************************************************** */
+
+	a.tooltip {
+		position: relative;
+	}
+	a.tooltip span {
+		position: absolute;
+		display: none;
+		width: 120px;
+		bottom: 20px;
+		left: 50%;
+		margin-left: -60px;
+		padding: 5px;
+		text-align: center;
+		text-decoration: none;
+		background-color: #fe9;
+		color: #333;
+		border: 2px solid #333;
+		border-radius: 5px;
+	}
+	a.tooltip:hover span {
+		display: block;
+	}
+
+/* **************************************************
+	GENERIC TOOLTIP
+************************************************** */
+
+	a[data-tooltip] {
+		position: relative;
+	}
+	a[data-tooltip]::after {
+		content: attr(data-tooltip);
+		position: absolute;
+		width: 200px;
+		bottom: 30px;
+		left: 50%;
+		margin-left: -100px;
+		padding: 5px;
+		color: #fff;
+		background-color: rgba(50,50,50,0.95);
+		display: none;
+		text-align: center;
+		border-radius: 4px;
+	}
+	a[data-tooltip]:hover::before, a[data-tooltip]:hover::after {
+		display: block;
+	}
+	a[data-tooltip]::before {
+		content: "";
+		display: none;
+		position: absolute;
+		width: 0;
+		height: 0;
+		bottom: 10px;
+		left: 50%;
+		margin-left: -10px;
+		border: 10px solid transparent;
+		border-top-color: rgba(50,50,50,0.95);
+	}
+
+	</style>
+</head>
+<body>
+	<header class="container">
+		<h1>CSS Menu + Tooltip</h1>
+		<nav>
+			<ul class="menu">
+				<li><a href="#">Item 1</a></li>
+				<li><a href="#">Item 2</a>
+					<ul>
+						<li><a href="#">Item 2.1</a></li>
+						<li><a href="#">Item 2.2</a></li>
+						<li><a href="#">Item 2.3</a></li>
+						<li><a href="#">Item 2.4</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Item 3</a>
+					<ul>
+						<li><a href="#">Item 3.1</a></li>
+						<li><a href="#">Item 3.2</a></li>
+						<li><a href="#">Item 3.3</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<section class="container">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac arcu tortor. Vivamus cursus tortor id ultrices auctor. Duis tincidunt in arcu vitae porta. Aliquam erat volutpat. Phasellus eu velit vel metus venenatis vulputate. Sed risus mi, molestie a nulla molestie, mollis venenatis est. Fusce nec egestas magna. Integer condimentum magna auctor fermentum condimentum. Sed eget ligula eget elit viverra accumsan eu nec nulla. Phasellus sit amet ipsum arcu. Nam ut velit ipsum. Mauris ullamcorper pharetra mi, ultrices tristique mauris viverra non. Aliquam eu nisl sodales neque posuere congue.</p>
+		<p>In lobortis laoreet leo eu scelerisque. Quisque egestas, turpis vel tristique fringilla, magna nibh venenatis lorem, ac porttitor turpis turpis vel velit. <a href="#" class="tooltip"><span>Simple tooltip: use the tooltip class</span>Suspendisse</a> ut libero eleifend, malesuada est a, fringilla metus. Aliquam a risus quis libero semper sollicitudin quis sit amet dolor. Quisque egestas vulputate urna, dapibus pretium erat gravida at. Praesent ut justo ac nunc tincidunt pulvinar vel faucibus ligula. <a href="#" data-tooltip="Generic tooltip: use the data-tooltip attribute">Integer volutpat</a> varius risus, eu pharetra lacus semper a. Pellentesque lacus justo, tincidunt eu sem in, dapibus euismod mi. Quisque a leo at magna vulputate tincidunt. Nunc ipsum augue, cursus ut purus vel, lacinia consectetur tellus. Mauris pellentesque, sapien eget mollis laoreet, augue dui dapibus massa, id gravida lorem nulla quis risus. Sed commodo, erat at elementum semper, urna est lacinia mauris, eget lobortis leo justo fringilla nunc. Donec facilisis metus vel condimentum facilisis. Donec venenatis, felis a vestibulum sagittis, lectus ipsum iaculis turpis, non ultricies erat sem nec ante.</p>
+		<p>Sed sit amet sapien laoreet, sodales dui eu, tincidunts diam. Donec fermentum ligula sed diam aliquam, nec faucibus orci scelerisque. In id mauris nec ipsum euismod bibendum at nec mi. Vivamus tristique in augue a ullamcorper. Mauris lacinia varius congue. Sed sollicitudin lobortis interdum. Nullam placerat adipiscing consequat. Ut a tincidunt elit, eu commodo augue.</p>
+	</section>
+</body>
+</html>
