@@ -42,13 +42,13 @@ ul.menuDeroulant   ul {
     top: 34px;
     /*display: none;*/
     /*padding: 10px;*/
-
+    margin-left: 0;
+    padding-left: 0;
 }
 ul.menuDeroulant ul li {
     width: 100px;
     text-align: left;
-    margin-left: 0;
-    padding-left: 0;
+
 }
 
 nav.topMenu > ul >li:hover >ul   {
