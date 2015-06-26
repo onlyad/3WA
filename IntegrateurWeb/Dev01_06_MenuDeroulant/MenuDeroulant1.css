@@ -1,0 +1,26 @@
+body {
+    font-family: sans-serif;
+    color: #555;
+    background-color: #eee;
+}
+.container {
+    width: 800px;
+    margin: 1em auto;
+    padding: 1em;
+    background-color: #fff;
+
+}
+
+p {
+    text-align: justify;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: grey;
+    color: white;
+}
+
+
