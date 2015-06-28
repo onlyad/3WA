@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    font-family: arvo sans-serif;
+    font-size: 100%;
+    background-color: #D5D3CE;
+}
+
+.container {
+    width: 960px;
+    margin: 1em auto;
+    padding: 1em;
+    border-top: solid 1px #000000;
+
+}
+
+div.divPageLogo {
+    float: left;
+    width: 25%;
+}
+
+div.divTopMenu {
+    float: right;
+    width: 50%;
+}
+
+ul.ulTopMenu {
+    margin: 0;
+    padding: 0 0 0 0;
+    list-style-type: none;
+    background-color: #343434;
+    color: #fff;
+    width: 95%;
+}
+
+ul.ulTopMenu li {
+    display: inline-block;
+    padding: 0.5em 0.5em;
+}
+
+ul.ulTopMenu li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+div.divFlexslider1 {
+    width: 67%;
+    margin-top: 3em;
+    float: left;
+}
+
+div.flexsliderFigCaption {
+    width: 30%;
+    float: right;
+}
+
+h1.h1Wonder {
+    font-size: 1.5em;
+    padding-top: 4em;
+
+}
+h2.h2TakeALook {
+    background-color: #343434;
+    color: #D14B20;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    height: 1.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+span.spanFontWhite {
+    color: #fff;
+}
+
+article.artLeft {
+    float: left;
+    width: 22%;
+}
+
+img.imgResponsive {
+    width: 100%;
+    height: auto;
+}
+div.divFigCaption  {
+    background-color: #fff;
+    width: 100%;
+    height: 07em;
+
+
+}
+h3.h3BadDinausor {
+    text-transform: capitalize;
+    text-align: center;
+    color: #EF501F;
+    margin-top: 0;
+    padding-top: 1.5em;
+    font-size: 1.5em;
+
+}
+
+p.pCenter {
+    text-align: center;
+}
+article.artLeftCenter {
+    float: left;
+    width: 22%;
+    margin-left: 4%;
+}
+
+article.artRightCenter {
+    float: left;
+    width: 22%;
+    margin-left: 4%;
+}
+
+article.artRight {
+    float: left;
+    width: 22%;
+    margin-left: 4%;
+}
