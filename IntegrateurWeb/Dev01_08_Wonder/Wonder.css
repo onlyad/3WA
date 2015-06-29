@@ -212,20 +212,26 @@ div.divFlickrPhotos {
     width: 22%;
     margin-left: 4%;
 }
-div.divImg1,  {
+div.divImg1  {
     float: left;
-    width: 4%;
+    width: 20%;
     height: auto;
 }
-div.divFlickrPhotos img + img {
+div.divImg2 {
     float: left;
-    width: 4%;
+    width: 20%;
     margin-left: 0.6% ;
     height: auto;
 }
-/*div.divImg2 {*/
-    /*float: left;*/
-    /*width: 5%;*/
-    /*margin-left: 0.6% ;*/
-    /*height: auto;*/
-/*}*/
+div.divImg3 {
+    float: left;
+    width: 20%;
+    margin-left: 0.6% ;
+    height: auto;
+}
+div.divImg4 {
+    float: left;
+    width: 20%;
+    margin-left: 0.6% ;
+    height: auto;
+}
