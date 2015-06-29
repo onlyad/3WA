@@ -17,7 +17,13 @@
                 "directionNav": false
             });
         });
-        $('.divFlexslider1').flexslider({})
+        $(window).load(function () {
+            $('.divFlexslider2').flexslider({
+                "controlNav": false,
+                "directionNav": true
+            });
+        });
+
 
     </script>
 
@@ -57,54 +63,133 @@
             </ul>
 
         </div>
-        <div class="flexsliderFigCaption">
+        <div class="flexslider1FigCaption">
             <h1 class="h1Wonder">This is wonderful. Wonder is a beautiful multipurpose html/css theme</h1>
+
             <p>For us the product package represents the core media within shopper marketing</p>
         </div>
     </div>
 
-<section class="sectMain clearfix">
-    <h2 class="h2TakeALook">Take a look <span class="spanFontWhite">at our work</span></h2>
-    <article class="artLeft">
-        <a href="#"> <img class="imgResponsive" src="images/work-1.jpg"></a>
+    <section class="sectMain clearfix">
+        <h2 class="h2TakeALook">Take a look <span class="spanFontWhite">at our work</span></h2>
+        <article class="artLeft">
+            <a href="#"> <img class="imgResponsive" src="images/work-1.jpg"></a>
 
-        <div class="divFigCaption">
-            <h3 class="h3BadDinausor">bad dinausor</h3>
+            <div class="divFigCaption">
+                <h3 class="h3BadDinausor">bad dinausor</h3>
 
-            <p class="pCenter">Not so bad really</p>
-        </div>
-    </article>
-    <article class="artLeftCenter">
-        <a href="#"> <img class="imgResponsive" src="images/work-2.jpg"></a>
+                <p class="pCenter">Not so bad really</p>
+            </div>
+        </article>
+        <article class="artLeftCenter">
+            <a href="#"> <img class="imgResponsive" src="images/work-2.jpg"></a>
 
-        <div class="divFigCaption">
-            <h3 class="h3BadDinausor">bad dinausor</h3>
+            <div class="divFigCaption">
+                <h3 class="h3BadDinausor">bad dinausor</h3>
 
-            <p class="pCenter">Not so bad really</p>
-        </div>
-    </article>
-    <article class="artRightCenter">
-        <a href="#"> <img class="imgResponsive" src="images/work-3.jpg"></a>
+                <p class="pCenter">Not so bad really</p>
+            </div>
+        </article>
+        <article class="artRightCenter">
+            <a href="#"> <img class="imgResponsive" src="images/work-3.jpg"></a>
 
-        <div class="divFigCaption">
-            <h3 class="h3BadDinausor">bad dinausor</h3>
+            <div class="divFigCaption">
+                <h3 class="h3BadDinausor">bad dinausor</h3>
 
-            <p class="pCenter">Not so bad really</p>
-        </div>
-    </article>
-    <article class="artRight">
-        <a href="#"> <img class="imgResponsive" src="images/work-4.jpg"></a>
+                <p class="pCenter">Not so bad really</p>
+            </div>
+        </article>
+        <article class="artRight">
+            <a href="#"> <img class="imgResponsive" src="images/work-4.jpg"></a>
 
-        <div class="divFigCaption">
-            <h3 class="h3BadDinausor">bad dinausor</h3>
+            <div class="divFigCaption">
+                <h3 class="h3BadDinausor">bad dinausor</h3>
 
-            <p class="pCenter">Not so bad really</p>
-        </div>
-    </article>
+                <p class="pCenter">Not so bad really</p>
+            </div>
+        </article>
 
-</section>
+    </section>
     <div class="divBlogNVideo clearfix">
-        
+
+        <div class="divBlog">
+            <h2 class="h2TakeALook">From the blog <span class="spanFontWhite">all the latest news</span></h2>
+
+            <div class="flexslider divFlexslider2">
+                <ul class="slides">
+                    <li>
+                        <img src="images/blog-1.jpg">
+                    </li>
+                    <li>
+                        <img src="images/blog-2.jpg">
+                    </li>
+                </ul>
+            </div>
+            <div class="divFlexslider2FigCaption">
+                <h3 class="h3FigCaption">You are super awesome</h3>
+
+                <p class="pRemoveMargin">Posted on: Aug 14, 2013</p>
+
+                <p class="pRemoveMargin">Posted by: Admin</p>
+
+                <p class="pAddMargin">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore
+                    et dolore magna aliqua. .</p>
+            </div>
+
+        </div>
+        <div class="divVideo">
+            <h2 class="h2TakeALook">Recent video <span class="spanFontWhite">created by US</span></h2>
+            <video width="400" height="200" preload="auto">
+                <source src="">
+            </video>
+        </div>
+    </div>
+    <div class="footer">
+        <footer class="clearfix">
+            <div class="divContactUs">
+                <h2 class="h2Footer">Contact Us</h2>
+                <img src="images/footer-logo.png">
+
+                <p class="pWonderBunker">Wonder Bunker</p>
+
+                <p class="pAddress">6064 Amazing St,</p>
+
+                <p class="pAddress">Madrid, Spain</p>
+
+            </div>
+            <div class="divLatestTweets">
+                <h2 class="h2Footer">Latest Tweets</h2>
+
+                <p><a href="#">@Basicoh_</a> Hey! Buy this beautiful theme right now!</p>
+
+                <p><a href="#">@Basicoh_</a> Hey! Buy this beautiful theme right now! Buy this beautiful theme right
+                    now!
+                </p>
+
+                <p><a href="#">@Basicoh_</a>_Hey! Buy this beautiful theme right now! Buy this beautiful theme right
+                    now!
+                </p>
+            </div>
+            <div class="divLatestPosts">
+                <h2 class="h2Footer">Latest Posts</h2>
+                <p class="pLatestPosts"><a href="#">Example post number1</a> </p>
+                <p class="pLatestPosts"><a href="#">Example post number1</a> </p>
+                <p class="pLatestPosts"><a href="#">Example post number1</a> </p>
+                <p class="pLatestPosts"><a href="#">Example post number1</a> </p>
+            </div>
+            <div class="divFlickrPhotos clearfix">
+                <h2 class="h2Footer">Flickr Photos</h2>
+                <div class="divImg1"><img src="images/flickr/1.jpg">
+                </div>
+                <div class="divImg2"><img src="images/flickr/2.jpg">
+                </div>
+                <div class="divImg3"><img src="images/flickr/3.jpg">
+                </div>
+                <div class="divImg4"><img src="images/flickr/4.jpg">
+                </div>
+            </div>
+        </footer>
     </div>
 </div>
 
